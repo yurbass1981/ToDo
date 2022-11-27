@@ -9,17 +9,6 @@ namespace ToDo.Services
         public List<ToDoViewModel> GetList()
         {
             return toDoList;
-            //var filteredToDoList = toDoList.Where(toDoItem => !toDoItem.IsCompleted);
-
-            //var filteredToDoList = new List<ToDoViewModel>();
-            //foreach (var toDoItem in toDoList)
-            //{
-            //    if (!toDoItem.IsCompleted)
-            //    {
-            //        filteredToDoList.Add(toDoItem);
-            //    }
-            //}
-            //return filteredToDoList;
         }
 
         public void Create(string text)
@@ -40,8 +29,6 @@ namespace ToDo.Services
 
         public void Delete(int id)
         {
-            //var toDoItemToDelete = toDoList.First(toDoItem => toDoItem.Id == id);
-
             ToDoViewModel toDoItemToDelete = null;
 
             foreach (var toDoItem in toDoList)
@@ -59,9 +46,6 @@ namespace ToDo.Services
             }
 
             toDoList.Remove(toDoItemToDelete);
-
-            //var filteredToDoList = toDoList.Where(toDoItem => !toDoItem.IsCompleted);
-
         }
 
     }
