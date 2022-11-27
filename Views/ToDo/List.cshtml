@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ToDoViewModel>
+
+<div class="text-center">
+
+    @using (var form = Html.BeginForm("Create", "ToDo", FormMethod.Post))
+    {
+        <div class="input-group">
+
+            <div class="input-group-append">
+                <input type="text" name="text" placeholder="write todo"></input>
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </div>
+    }
+
+    @if (Model.Any())
+    {
+        <table>
+            <tr>
+                <th>Text</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Text</td>
+                    <td>
+                        @using (Html.BeginForm("Update", "ToDo", new { id = item.Id }, FormMethod.Post))
+                        {
+                            <button type="submit" class="btn btn-primary" value="Update">Update</button>
+                        }
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "ToDo", new { id = item.Id }, FormMethod.Post))
+                        {
+                            <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else 
+    {
+        <p>Nothing to do</p>
+    }
+    
+    <hr />
+</div>

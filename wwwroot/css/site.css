@@ -1,0 +1,38 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+div.input-group {
+    padding-right: 30px;
+    margin-top: 30px;
+    justify-content: end;
+}
+
+.btn-update {
+    color: white;
+    background-color: blue;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    padding-right: 10px;
+}
+
