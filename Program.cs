@@ -1,15 +1,14 @@
+using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
+using ToDo.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IToDoService, ToDoService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Home/Error");
-//}
 app.UseStaticFiles();
 
 app.UseRouting();

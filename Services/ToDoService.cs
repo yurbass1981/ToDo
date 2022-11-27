@@ -2,7 +2,7 @@
 
 namespace ToDo.Services
 {
-    public class ToDoService
+    public class ToDoService : IToDoService
     {
         private static List<ToDoViewModel> toDoList = new();
 

@@ -7,10 +7,10 @@ namespace ToDo.Controllers
 {
     public class ToDoController : Controller
     {
-        private readonly ToDoService _toDoService;
-        public ToDoController()
+        private readonly IToDoService _toDoService;
+        public ToDoController(IToDoService toDoService)
         {
-            _toDoService = new ToDoService();
+            _toDoService = toDoService;
         }
 
         public IActionResult List()
