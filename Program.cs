@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IToDoService, ToDoService>();
+
 
 
 var app = builder.Build();
@@ -22,6 +22,8 @@ else
 {
     builder.Services.AddScoped<IToDoRepository, InFileToDoRepository>();
 }
+
+builder.Services.AddScoped<IToDoService, ToDoService>();
 
 app.UseStaticFiles();
 
