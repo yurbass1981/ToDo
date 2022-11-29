@@ -5,8 +5,9 @@ namespace ToDo.Repositories
     public interface IToDoRepository
     {
         List<ToDoViewModel> GetList();
-        void Create(string text);
+        void Create(ToDoViewModel toToItem);
         void Update(ToDoViewModel toDoItem);
         void Delete(int id);
     }
+
 }

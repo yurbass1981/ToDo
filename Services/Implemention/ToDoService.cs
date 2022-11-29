@@ -1,51 +1,43 @@
 ﻿using ToDo.Models;
+using ToDo.Repositories;
 
 namespace ToDo.Services.Implemention
 {
     public class ToDoService : IToDoService
     {
-        private static List<ToDoViewModel> toDoList = new();
+        private readonly IToDoRepository toDoRepository;
+
+        public ToDoService(IToDoRepository toDoRepository)
+        {
+            this.toDoRepository = toDoRepository;
+        }
+
+
 
         public List<ToDoViewModel> GetList()
         {
-            return toDoList;
+            return toDoRepository.GetList();
         }
 
         public void Create(string text)
         {
-            var newId = toDoList.Count == 0 ? 1 : toDoList.Max(toDoItem => toDoItem.Id) + 1;
-            toDoList.Add(new ToDoViewModel()
+            var newToDoItem = new ToDoViewModel()
             {
-                Id = newId,
                 Text = text,
                 Created = DateTime.Now
-            });
+            };
+
+            toDoRepository.Create(newToDoItem);
         }
 
         public void Update(ToDoViewModel toDoItem)
         {
-            throw new NotImplementedException("Is not implemented yet");
+            toDoRepository.Update(toDoItem);
         }
 
         public void Delete(int id)
         {
-            ToDoViewModel toDoItemToDelete = null;
-
-            foreach (var toDoItem in toDoList)
-            {
-                if (toDoItem.Id == id)
-                {
-                    toDoItemToDelete = toDoItem;
-                    break;
-                }
-            }
-
-            if (toDoItemToDelete == null)
-            {
-                throw new Exception("Not found");
-            }
-
-            toDoList.Remove(toDoItemToDelete);
+            toDoRepository.Delete(id);
         }
 
     }
