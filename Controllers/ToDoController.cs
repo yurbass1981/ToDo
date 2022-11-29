@@ -31,10 +31,10 @@ namespace ToDo.Controllers
             return RedirectToAction("List");
         }
 
-        public IActionResult Update(int id)
-        {
-            _toDoService.Update(id);
-            return View();
-        }
+        //public IActionResult Update(int id)
+        //{
+        //    _toDoService.Update(id);
+        //    return View();
+        //}
     }
 }

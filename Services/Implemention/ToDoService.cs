@@ -1,6 +1,6 @@
 ﻿using ToDo.Models;
 
-namespace ToDo.Services
+namespace ToDo.Services.Implemention
 {
     public class ToDoService : IToDoService
     {
@@ -22,9 +22,9 @@ namespace ToDo.Services
             });
         }
 
-        public void Update(int id)
+        public void Update(ToDoViewModel toDoItem)
         {
-            ToDoViewModel toDoItemToUpdate = null;
+            throw new NotImplementedException("Is not implemented yet");
         }
 
         public void Delete(int id)

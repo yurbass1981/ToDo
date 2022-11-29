@@ -1,8 +1,8 @@
 ﻿using ToDo.Models;
 
-namespace ToDo.Services
+namespace ToDo.Repositories
 {
-    public interface IToDoService
+    public interface IToDoRepository
     {
         List<ToDoViewModel> GetList();
         void Create(string text);
