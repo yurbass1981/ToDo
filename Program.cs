@@ -6,24 +6,25 @@ using ToDo.Services.Implemention;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+//if (app.Environment.IsDevelopment())
+//{
+//    builder.Services.AddScoped<IToDoRepository, InMemoryToDoRepository>();
+//}
+//else 
+//{
+//    builder.Services.AddScoped<IToDoRepository, InFileToDoRepository>();
+//}
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-
+builder.Services.AddSingleton<IToDoRepository, InMemoryToDoRepository>();
+builder.Services.AddScoped<IToDoService, ToDoService>();
 
 var app = builder.Build();
 
 
-if (app.Environment.IsDevelopment())
-{
-    builder.Services.AddScoped<IToDoRepository, InMemoryToDoRepository>();
-}
-else 
-{
-    builder.Services.AddScoped<IToDoRepository, InFileToDoRepository>();
-}
 
-builder.Services.AddScoped<IToDoService, ToDoService>();
 
 app.UseStaticFiles();
 

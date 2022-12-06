@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using ToDo.Models;
 using ToDo.Services;
 
 namespace ToDo.Controllers

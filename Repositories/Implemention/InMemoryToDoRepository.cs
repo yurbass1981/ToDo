@@ -4,19 +4,35 @@ namespace ToDo.Repositories.Implemention
 {
     public class InMemoryToDoRepository : IToDoRepository
     {
+        private int lastId = 1;
+        private List<ToDoViewModel> toDoStorage = new();
+
         public void Create(ToDoViewModel toDoItem)
         {
-            throw new NotImplementedException();
+            toDoItem.Id = lastId;
+            toDoStorage.Add(toDoItem);
+            lastId++;
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            ToDoViewModel toDoItemToDelete = null;
+
+            foreach(var item in toDoStorage)
+            {
+                if(item.Id == id)
+                {
+                    toDoItemToDelete = item;
+                    break;
+                }
+            }
+
+            toDoStorage.Remove(toDoItemToDelete);
         }
 
         public List<ToDoViewModel> GetList()
         {
-            throw new NotImplementedException();
+            return toDoStorage;
         }
 
         public void Update(ToDoViewModel toDoItem)
