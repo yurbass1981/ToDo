@@ -30,6 +30,11 @@ namespace ToDo.Repositories.Implemention
             toDoStorage.Remove(toDoItemToDelete);
         }
 
+        public ToDoViewModel? GetById(int id)
+        {
+            return toDoStorage.FirstOrDefault(x => x.Id == id);
+        }
+
         public List<ToDoViewModel> GetList()
         {
             return toDoStorage;

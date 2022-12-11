@@ -40,5 +40,10 @@ namespace ToDo.Services.Implemention
             toDoRepository.Delete(id);
         }
 
+        public ToDoViewModel GetById(int id)
+        {
+            ToDoViewModel itemById = toDoRepository.GetById(id);
+            return itemById;
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace ToDo.Repositories
         void Create(ToDoViewModel toDoItem);
         void Update(ToDoViewModel toDoItem);
         void Delete(int id);
+        ToDoViewModel? GetById(int id);
     }
 
 }

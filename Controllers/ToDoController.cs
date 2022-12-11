@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ToDo.Models;
 using ToDo.Services;
 
 namespace ToDo.Controllers
@@ -29,10 +30,10 @@ namespace ToDo.Controllers
             return RedirectToAction("List");
         }
 
-        //public IActionResult Update(int id)
-        //{
-        //    _toDoService.Update(id);
-        //    return View();
-        //}
+        public IActionResult UpdateView(int id)
+        {
+            ToDoViewModel itemToUpdate = _toDoService.GetById(id);
+            return View("Update", itemToUpdate);
+        }
     }
 }

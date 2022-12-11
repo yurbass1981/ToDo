@@ -27,16 +27,10 @@
                 <tr>
                     <td>@item.Text</td>
                     <td>
-                        @using (Html.BeginForm("Update", "ToDo", new { id = item.Id }, FormMethod.Post))
-                        {
-                            <button type="submit" class="btn btn-primary" value="Update">Update</button>
-                        }
+                        @Html.ActionLink("Update", "UpdateView", "ToDo", new { id = item.Id })
                     </td>
                     <td>
-                        @using (Html.BeginForm("Delete", "ToDo", new { id = item.Id }, FormMethod.Post))
-                        {
-                            <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
-                        }
+                        @Html.ActionLink("Delete", "Delete", "ToDo", new { id = item.Id })
                     </td>
                 </tr>
             }

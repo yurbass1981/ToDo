@@ -8,5 +8,6 @@ namespace ToDo.Services
         void Create(string text);
         void Update(ToDoViewModel toDoItem);
         void Delete(int id);
+        ToDoViewModel GetById(int id);
     }
 }

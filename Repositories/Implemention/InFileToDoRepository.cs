@@ -14,6 +14,11 @@ namespace ToDo.Repositories.Implemention
             throw new NotImplementedException();
         }
 
+        public ToDoViewModel GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<ToDoViewModel> GetList()
         {
             throw new NotImplementedException();
