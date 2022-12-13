@@ -24,7 +24,7 @@ namespace ToDo.Repositories.Implemention
             throw new NotImplementedException();
         }
 
-        public void Update(ToDoViewModel toDoItem)
+        public void Update(int id, ToDoViewModel toDoItem)
         {
             throw new NotImplementedException();
         }

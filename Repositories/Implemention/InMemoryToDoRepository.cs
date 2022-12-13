@@ -32,18 +32,17 @@ namespace ToDo.Repositories.Implemention
 
         public ToDoViewModel? GetById(int id)
         {
-            //ToDoViewModel itemById = null;
             //foreach (var item in toDoStorage)
             //{
-            //    if (id == item.Id)
+            //    if (item.Id == id)
             //    {
-            //        itemById = item;
-            //        break;
+            //        return item;
             //    }
             //}
-            //return toDoStorage.FirstOrDefault(itemById);
 
-            return toDoStorage.FirstOrDefault(x => x.Id == id);
+            //return null;
+         
+            return toDoStorage.FirstOrDefault(x=>x.Id == id);
         }
 
         public List<ToDoViewModel> GetList()
@@ -51,9 +50,15 @@ namespace ToDo.Repositories.Implemention
             return toDoStorage;
         }
 
-        public void Update(ToDoViewModel toDoItem)
+        public void Update(int id, ToDoViewModel toDoItem)
         {
-            throw new NotImplementedException();
+            var itemToUpdate = GetById(id);
+
+            if (itemToUpdate != null)
+            {
+                itemToUpdate.Text = toDoItem.Text;
+                itemToUpdate.IsCompleted = toDoItem.IsCompleted;
+            }
         }
     }
 }

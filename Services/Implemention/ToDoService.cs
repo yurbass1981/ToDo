@@ -30,9 +30,9 @@ namespace ToDo.Services.Implemention
             toDoRepository.Create(newToDoItem);
         }
 
-        public void Update(ToDoViewModel toDoItem)
+        public void Update(int id, ToDoViewModel toDoItem)
         {
-            toDoRepository.Update(toDoItem);
+            toDoRepository.Update(id, toDoItem);
         }
 
         public void Delete(int id)
@@ -42,15 +42,15 @@ namespace ToDo.Services.Implemention
 
         public ToDoViewModel GetById(int id)
         {
-            ToDoViewModel itemById = toDoRepository.GetById(id);
+            var itemById = toDoRepository.GetById(id);
 
-            if (itemById != null)
+            if (itemById == null)
             {
-                return itemById;
-            }
-            
                 throw new Exception($"Todo item with id {id} hasn't been found");
-            
+            }
+
+            return itemById;
+
         }
     }
 }

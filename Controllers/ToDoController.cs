@@ -24,9 +24,9 @@ namespace ToDo.Controllers
             return RedirectToAction("List");
         }
 
-        public IActionResult Create(string text)
+        public IActionResult Create(ToDoViewModel toDoItem)
         {
-            _toDoService.Create(text);
+            _toDoService.Create(toDoItem.Text);
             return RedirectToAction("List");
         }
 
@@ -34,6 +34,12 @@ namespace ToDo.Controllers
         {
             ToDoViewModel itemToUpdate = _toDoService.GetById(id);
             return View("Update", itemToUpdate);
+        }
+
+        public IActionResult Update(int id, ToDoViewModel toDoItem)
+        {
+            _toDoService.Update(id, toDoItem);
+            return RedirectToAction("List");
         }
     }
 }
