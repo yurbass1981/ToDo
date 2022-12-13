@@ -18,9 +18,9 @@ namespace ToDo.Repositories.Implemention
         {
             ToDoViewModel toDoItemToDelete = null;
 
-            foreach(var item in toDoStorage)
+            foreach (var item in toDoStorage)
             {
-                if(item.Id == id)
+                if (item.Id == id)
                 {
                     toDoItemToDelete = item;
                     break;
@@ -32,6 +32,17 @@ namespace ToDo.Repositories.Implemention
 
         public ToDoViewModel? GetById(int id)
         {
+            //ToDoViewModel itemById = null;
+            //foreach (var item in toDoStorage)
+            //{
+            //    if (id == item.Id)
+            //    {
+            //        itemById = item;
+            //        break;
+            //    }
+            //}
+            //return toDoStorage.FirstOrDefault(itemById);
+
             return toDoStorage.FirstOrDefault(x => x.Id == id);
         }
 

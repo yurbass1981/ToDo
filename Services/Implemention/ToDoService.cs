@@ -43,7 +43,14 @@ namespace ToDo.Services.Implemention
         public ToDoViewModel GetById(int id)
         {
             ToDoViewModel itemById = toDoRepository.GetById(id);
-            return itemById;
+
+            if (itemById != null)
+            {
+                return itemById;
+            }
+            
+                throw new Exception($"Todo item with id {id} hasn't been found");
+            
         }
     }
 }
