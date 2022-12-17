@@ -1,8 +1,7 @@
-﻿namespace ToDo.Enums
+﻿namespace ToDo.Enums;
+
+public enum DataStorageTypeEnum
 {
-    public enum DataStorageTypeEnum
-    {
-        InMemory, 
-        InFile
-    }
+    InMemory,
+    InFile
 }

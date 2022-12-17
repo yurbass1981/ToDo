@@ -1,8 +1,8 @@
-﻿@model IEnumerable<ToDoViewModel>
+﻿@model IEnumerable<TodoViewModel>
 
 <div class="text-center">
 
-    @using (Html.BeginForm("Create", "ToDo", FormMethod.Post))
+    @using (Html.BeginForm("Create", "Todo", FormMethod.Post))
     {
         <div class="input-group">
 
@@ -29,10 +29,10 @@
                         @item.Text
                     </td>
                     <td>
-                        @Html.ActionLink("Update", "UpdateView", "ToDo", new { id = item.Id })
+                        @Html.ActionLink("Update", "UpdateView", "Todo", new { id = item.Id })
                     </td>
                     <td>
-                        @Html.ActionLink("Delete", "Delete", "ToDo", new { id = item.Id })
+                        @Html.ActionLink("Delete", "Delete", "Todo", new { id = item.Id })
                     </td>
                 </tr>
             }

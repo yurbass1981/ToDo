@@ -1,8 +1,8 @@
 using ToDo.Enums;
 using ToDo.Repositories;
-using ToDo.Repositories.Implemention;
+using ToDo.Repositories.Implementation;
 using ToDo.Services;
-using ToDo.Services.Implemention;
+using ToDo.Services.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +22,7 @@ if (storageType == DataStorageTypeEnum.InFile.ToString())
 }
 
 
-builder.Services.AddScoped<IToDoService, ToDoService>();
+builder.Services.AddScoped<ITodoService, TodoService>();
 
 var app = builder.Build();
 
@@ -37,6 +37,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=ToDo}/{action=List}/{id?}");
+    pattern: "{controller=Todo}/{action=List}/{id?}");
 
 app.Run();

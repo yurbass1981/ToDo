@@ -1,14 +1,12 @@
-﻿using ToDo.Models;
+﻿using ToDo.DTOs;
 
-namespace ToDo.Repositories
+namespace ToDo.Repositories;
+
+public interface IToDoRepository
 {
-    public interface IToDoRepository
-    {
-        List<ToDoViewModel> GetList();
-        void Create(ToDoViewModel toDoItem);
-        void Update(Guid id, ToDoViewModel toDoItem);
-        void Delete(Guid id);       
-        ToDoViewModel? GetById(Guid id);
-    }
-
+    List<TodoItemDto> GetList();
+    void Create(TodoItemDto toDoItem);
+    void Update(Guid id, TodoItemDto toDoItem);
+    void Delete(Guid id);
+    TodoItemDto? GetById(Guid id);
 }
