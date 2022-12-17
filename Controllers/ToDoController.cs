@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ToDo.DTOs;
 using ToDo.Models;
 using ToDo.Services;
 
@@ -25,28 +24,20 @@ namespace ToDo.Controllers
             return RedirectToAction("List");
         }
 
-        public IActionResult Create(Models.ToDoItemDto model)
+        public IActionResult Create(ToDoViewModel toDoItem)
         {
-            _toDoService.Create(model.Text);
+            _toDoService.Create(toDoItem.Text);
             return RedirectToAction("List");
         }
 
         public IActionResult UpdateView(Guid id)
         {
-            Models.ToDoItemDto itemToUpdate = _toDoService.GetById(id);
+            ToDoViewModel itemToUpdate = _toDoService.GetById(id);
             return View("Update", itemToUpdate);
         }
 
-        public IActionResult Update(Guid id, ToDoViewModel model)
+        public IActionResult Update(Guid id, ToDoViewModel toDoItem)
         {
-            var toDoItem = new DTOs.ToDoItemDto()
-            {
-                Id = model.Id,
-                Text = model.Text,
-                Created = model.Created,
-                IsCompleted = model.IsCompleted
-            };
-
             _toDoService.Update(id, toDoItem);
             return RedirectToAction("List");
         }

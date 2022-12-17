@@ -1,6 +1,6 @@
 ﻿namespace ToDo.Models
 {
-    public class ToDoItemDto
+    public class ToDoViewModel
     {
         public Guid Id { get; set; }
         public string Text { get; set; }

@@ -4,11 +4,11 @@ namespace ToDo.Repositories
 {
     public interface IToDoRepository
     {
-        List<ToDoItemDto> GetList();
-        void Create(ToDoItemDto toDoItem);
-        void Update(Guid id, ToDoItemDto toDoItem);
+        List<ToDoViewModel> GetList();
+        void Create(ToDoViewModel toDoItem);
+        void Update(Guid id, ToDoViewModel toDoItem);
         void Delete(Guid id);       
-        ToDoItemDto? GetById(Guid id);
+        ToDoViewModel? GetById(Guid id);
     }
 
 }
