@@ -23,6 +23,7 @@ namespace ToDo.Services.Implemention
         {
             var newToDoItem = new ToDoViewModel()
             {
+                Id = Guid.NewGuid(),
                 Text = text,
                 Created = DateTime.Now
             };
@@ -30,17 +31,17 @@ namespace ToDo.Services.Implemention
             toDoRepository.Create(newToDoItem);
         }
 
-        public void Update(int id, ToDoViewModel toDoItem)
+        public void Update(Guid id, ToDoViewModel toDoItem)
         {
             toDoRepository.Update(id, toDoItem);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             toDoRepository.Delete(id);
         }
 
-        public ToDoViewModel GetById(int id)
+        public ToDoViewModel GetById(Guid id)
         {
             var itemById = toDoRepository.GetById(id);
 

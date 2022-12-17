@@ -6,9 +6,9 @@ namespace ToDo.Repositories
     {
         List<ToDoViewModel> GetList();
         void Create(ToDoViewModel toDoItem);
-        void Update(int id, ToDoViewModel toDoItem);
-        void Delete(int id);
-        ToDoViewModel? GetById(int id);
+        void Update(Guid id, ToDoViewModel toDoItem);
+        void Delete(Guid id);       
+        ToDoViewModel? GetById(Guid id);
     }
 
 }

@@ -9,12 +9,12 @@ namespace ToDo.Repositories.Implemention
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public ToDoViewModel GetById(int id)
+        public ToDoViewModel GetById(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace ToDo.Repositories.Implemention
             throw new NotImplementedException();
         }
 
-        public void Update(int id, ToDoViewModel toDoItem)
+        public void Update(Guid id, ToDoViewModel toDoItem)
         {
             throw new NotImplementedException();
         }

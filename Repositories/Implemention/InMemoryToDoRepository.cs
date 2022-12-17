@@ -4,17 +4,14 @@ namespace ToDo.Repositories.Implemention
 {
     public class InMemoryToDoRepository : IToDoRepository
     {
-        private int lastId = 1;
         private List<ToDoViewModel> toDoStorage = new();
 
         public void Create(ToDoViewModel toDoItem)
         {
-            toDoItem.Id = lastId;
             toDoStorage.Add(toDoItem);
-            lastId++;
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             ToDoViewModel toDoItemToDelete = null;
 
@@ -30,7 +27,7 @@ namespace ToDo.Repositories.Implemention
             toDoStorage.Remove(toDoItemToDelete);
         }
 
-        public ToDoViewModel? GetById(int id)
+        public ToDoViewModel? GetById(Guid id)
         {
             //foreach (var item in toDoStorage)
             //{
@@ -50,7 +47,7 @@ namespace ToDo.Repositories.Implemention
             return toDoStorage;
         }
 
-        public void Update(int id, ToDoViewModel toDoItem)
+        public void Update(Guid id, ToDoViewModel toDoItem)
         {
             var itemToUpdate = GetById(id);
 

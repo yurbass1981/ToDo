@@ -18,7 +18,7 @@ namespace ToDo.Controllers
             return View(filteredToDoList);
         }
 
-        public IActionResult Delete(int id)
+        public IActionResult Delete(Guid id)
         {
             _toDoService.Delete(id);
             return RedirectToAction("List");
@@ -30,13 +30,13 @@ namespace ToDo.Controllers
             return RedirectToAction("List");
         }
 
-        public IActionResult UpdateView(int id)
+        public IActionResult UpdateView(Guid id)
         {
             ToDoViewModel itemToUpdate = _toDoService.GetById(id);
             return View("Update", itemToUpdate);
         }
 
-        public IActionResult Update(int id, ToDoViewModel toDoItem)
+        public IActionResult Update(Guid id, ToDoViewModel toDoItem)
         {
             _toDoService.Update(id, toDoItem);
             return RedirectToAction("List");
