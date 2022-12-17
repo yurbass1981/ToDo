@@ -4,18 +4,20 @@
 }
 
 
-<div>
-    @Html.ActionLink("Back to List", "List")
-</div>
-
 @using (Html.BeginForm("Update", "ToDo", FormMethod.Post))
 {
-    <div class="input-group">
-        <div class="input-group-append">
-            @*<input type="text" name="id" value="@Model.Id">*@
-            @Html.HiddenFor(model=>model.Id)
-            <input type="text" name="text" value="@Model.Text">
-            <input type="submit" class="btn btn-success" value="Update">
+    <div>
+        
+        <div class="input-group">
+            <div class="input-group-append">
+                @*<input type="text" name="id" value="@Model.Id">*@
+                @Html.HiddenFor(model=>model.Id)
+                <input type="text" name="text" value="@Model.Text">
+                <input type="submit" class="btn btn-success" value="Update">
+                @Html.ActionLink("Back to List", "List")
+            </div>
         </div>
     </div>
+    
+    
 }
