@@ -1,4 +1,4 @@
-﻿namespace ToDo.Models
+﻿namespace ToDo.DTOs
 {
     public class ToDoItemDto
     {

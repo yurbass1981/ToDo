@@ -4,10 +4,10 @@ namespace ToDo.Services
 {
     public interface IToDoService
     {
-        List<ToDoViewModel> GetList();
+        List<ToDoItemDto> GetList();
         void Create(string text);
-        void Update(Guid id, ToDoViewModel toDoItem);
+        void Update(Guid id, ToDoItemDto toDoItem);
         void Delete(Guid id);
-        ToDoViewModel GetById(Guid id);
+        ToDoItemDto GetById(Guid id);
     }
 }

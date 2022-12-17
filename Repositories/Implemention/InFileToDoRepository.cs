@@ -4,7 +4,7 @@ namespace ToDo.Repositories.Implemention
 {
     public class InFileToDoRepository : IToDoRepository
     {
-        public void Create(ToDoViewModel toDoItem)
+        public void Create(ToDoItemDto toDoItem)
         {
             throw new NotImplementedException();
         }
@@ -14,17 +14,17 @@ namespace ToDo.Repositories.Implemention
             throw new NotImplementedException();
         }
 
-        public ToDoViewModel GetById(Guid id)
+        public ToDoItemDto GetById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public List<ToDoViewModel> GetList()
+        public List<ToDoItemDto> GetList()
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Guid id, ToDoViewModel toDoItem)
+        public void Update(Guid id, ToDoItemDto toDoItem)
         {
             throw new NotImplementedException();
         }

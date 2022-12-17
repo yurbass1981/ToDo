@@ -14,14 +14,14 @@ namespace ToDo.Services.Implemention
 
 
 
-        public List<ToDoViewModel> GetList()
+        public List<ToDoItemDto> GetList()
         {
             return toDoRepository.GetList();
         }
 
         public void Create(string text)
         {
-            var newToDoItem = new ToDoViewModel()
+            var newToDoItem = new ToDoItemDto()
             {
                 Id = Guid.NewGuid(),
                 Text = text,
@@ -31,7 +31,7 @@ namespace ToDo.Services.Implemention
             toDoRepository.Create(newToDoItem);
         }
 
-        public void Update(Guid id, ToDoViewModel toDoItem)
+        public void Update(Guid id, ToDoItemDto toDoItem)
         {
             toDoRepository.Update(id, toDoItem);
         }
@@ -41,7 +41,7 @@ namespace ToDo.Services.Implemention
             toDoRepository.Delete(id);
         }
 
-        public ToDoViewModel GetById(Guid id)
+        public ToDoItemDto GetById(Guid id)
         {
             var itemById = toDoRepository.GetById(id);
 
