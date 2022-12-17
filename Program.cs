@@ -1,3 +1,4 @@
+using ToDo.Enums;
 using ToDo.Repositories;
 using ToDo.Repositories.Implemention;
 using ToDo.Services;
@@ -9,12 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var storageType = builder.Configuration.GetSection("StorageType").Value;
-if (storageType == "InMemory")
+
+if (storageType == DataStorageTypeEnum.InMemory.ToString()) 
 {
     builder.Services.AddSingleton<IToDoRepository, InMemoryToDoRepository>();
 }
 
-if (storageType == "InFile")
+if (storageType == DataStorageTypeEnum.InFile.ToString())
 {
     builder.Services.AddScoped<IToDoRepository, InFileToDoRepository>();
 }
