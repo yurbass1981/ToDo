@@ -2,6 +2,7 @@
 using ToDo.DTOs;
 using ToDo.Models;
 using ToDo.Services;
+using ToDo.Utils;
 
 namespace ToDo.Controllers;
 
@@ -16,11 +17,9 @@ public class TodoController : Controller
 
     public IActionResult List()
     {
-        //TODO: try to map return type (TodoItemDto to TodoViewModel)
-        // there are some difficult things maybe, because we need to map not one object but a collection of objects
-        // you can use foreach for it or lambda type
-        var filteredToDoList = _todoService.GetList();
-        return View(filteredToDoList);
+        var listOfModels = _todoService.GetList()
+            .Select(Mapper.MapDtoToModel);
+        return View(listOfModels);
     }
 
     public IActionResult Delete(Guid id)
@@ -31,22 +30,19 @@ public class TodoController : Controller
 
     public IActionResult Create(TodoViewModel todoViewModel)
     {
-        //TODO: model has to be mapped
-        _todoService.Create(todoViewModel);
+        _todoService.Create(Mapper.MapModelToDto(todoViewModel));
         return RedirectToAction("List");
     }
 
     public IActionResult UpdateView(Guid id)
     {
-        //TODO: model has to be mapped
-        TodoViewModel itemToUpdate = _todoService.GetById(id);
-        return View("Update", itemToUpdate);
+        var todoItem = _todoService.GetById(id);
+        return View("Update", Mapper.MapDtoToModel(todoItem));
     }
 
-    public IActionResult Update(Guid id, TodoViewModel todoItem)
+    public IActionResult Update(Guid id, TodoViewModel todoViewModel)
     {
-        //TODO: model has to be mapped
-        _todoService.Update(id, todoItem);
+        _todoService.Update(id, Mapper.MapModelToDto(todoViewModel));
         return RedirectToAction("List");
     }
 }
