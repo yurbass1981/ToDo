@@ -8,19 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DTOs/TodoItemDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ToDoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TodoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ToDoViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/TodoViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/IToDoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/IToDoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/Implemention/InFileToDoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/Implementation/InFileToDoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Repositories/Implemention/InMemoryToDoRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/Implementation/InMemoryToDoRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/IToDoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ITodoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/Implemention/ToDoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Implementation/TodoService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Utils/Mapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/TodoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/TodoController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ToDo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/ToDo/About.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Todo/About.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/ToDo/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Todo/List.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/ToDo/Update.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Todo/Update.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +43,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="false" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
   </component>
@@ -63,18 +55,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/xobbit_26/.local/share/Symbols/src"
+    ]
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.ToDo: Dev_InFile">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.ToDo: Dev_InMemory">
     <configuration name="ToDo: Dev_InFile" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ToDo.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="Dev_InFile" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -89,7 +89,7 @@
     </configuration>
     <configuration name="ToDo: Dev_InMemory" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ToDo.csproj" />
-      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
       <option name="LAUNCH_PROFILE_NAME" value="Dev_InMemory" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -122,6 +122,8 @@
       <workItem from="1670950390694" duration="2264000" />
       <workItem from="1671267242137" duration="1289000" />
       <workItem from="1671271923899" duration="1764000" />
+      <workItem from="1671367031327" duration="884000" />
+      <workItem from="1671373491792" duration="901000" />
     </task>
     <task id="LOCAL-00001" summary="added update view functionality and cleaned up a bit">
       <created>1670763357277</created>
@@ -169,5 +171,9 @@
     <MESSAGE value="added application profiles inMemory and inFile" />
     <MESSAGE value="added in file module (not implemented yet)" />
     <option name="LAST_COMMIT_MESSAGE" value="added in file module (not implemented yet)" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
