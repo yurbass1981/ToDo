@@ -27,7 +27,7 @@ public class InMemoryToDoRepository : IToDoRepository
         _todoStorage.Remove(toDoItemToDelete);
     }
 
-    public TodoItemDto? GetById(Guid id)
+    public TodoItemDto GetById(Guid id)
     {
         return _todoStorage.FirstOrDefault(x => x.Id == id);
     }

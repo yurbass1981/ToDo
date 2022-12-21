@@ -8,5 +8,5 @@ public interface IToDoRepository
     void Create(TodoItemDto toDoItem);
     void Update(Guid id, TodoItemDto toDoItem);
     void Delete(Guid id);
-    TodoItemDto? GetById(Guid id);
+    TodoItemDto GetById(Guid id);
 }
