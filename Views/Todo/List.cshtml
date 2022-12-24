@@ -4,12 +4,11 @@
 
     @using (Html.BeginForm("Create", "Todo", FormMethod.Post))
     {
-        <div class="input-group">
-
-            <span class="input-group-append">
-                <input type="text" class="form-control" name="text" placeholder="write todo">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="text" placeholder="write todo">
                 <button type="submit" class="btn btn-success">Add</button>
-            </span>
+
+            @* <span class="input-group-append"></span> *@
         </div>
     }
 
