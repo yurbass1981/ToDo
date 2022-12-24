@@ -42,12 +42,7 @@ public class TodoController : Controller
       //no...
       //I came up with a brillian idea it's better to create map functions that will 
       // be converting from dto to viewModel and the other way around
-      var todoItemDto = new TodoItemDto()
-      {
-         Id = Guid.NewGuid(),
-         Text = todoViewModel.Text,
-         Created = DateTime.Now
-      };
+      var todoItemDto = MapModelToDto(todoViewModel);
 
       _todoService.Create(todoItemDto);
       return RedirectToAction("List");
@@ -64,14 +59,8 @@ public class TodoController : Controller
    public IActionResult Update(Guid id, TodoViewModel todoViewModel)
    {
       //TODO: the same that I said above (in the Create action) we need to create map functions and reuse mapping functionality
-      var todoItemDto = new TodoItemDto
-      {
-         Id = todoViewModel.Id,
-         Text = todoViewModel.Text,
-         Created = todoViewModel.Created,
-         IsCompleted = todoViewModel.IsCompleted
-      };
-
+      var todoItemDto = MapModelToDto(todoViewModel);
+      
       _todoService.Update(id, todoItemDto);
       return RedirectToAction("List");
    }
@@ -85,5 +74,16 @@ public class TodoController : Controller
          Created = todoItemDto.Created,
          IsCompleted = todoItemDto.IsCompleted
       };
+   }
+
+   private TodoItemDto MapModelToDto(TodoViewModel todoViewModel)
+   {
+    return new TodoItemDto
+    {
+         Id = todoViewModel.Id,
+         Text = todoViewModel.Text,
+         Created = todoViewModel.Created,
+         IsCompleted = todoViewModel.IsCompleted
+    };
    }
 }
