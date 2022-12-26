@@ -2,6 +2,7 @@
 using ToDo.Models;
 using ToDo.DTOs;
 using ToDo.Services;
+using ToDo.Utils;
 
 namespace ToDo.Controllers;
 
@@ -23,7 +24,7 @@ public class TodoController : Controller
       //TODO: we need to learn LINQ and rewrite this part of code to LINQ expression
       foreach (var todoDto in todoItemDtoList)
       {
-         var todoViewModel = MapDtoToModel(todoDto);
+         var todoViewModel = Mapper.MapDtoToModel(todoDto);
          viewModelList.Add(todoViewModel);
       }
       return View(viewModelList);
@@ -37,7 +38,7 @@ public class TodoController : Controller
 
    public IActionResult Create(TodoViewModel todoViewModel)
    {
-      var todoItemDto = MapModelToDto(todoViewModel);
+      var todoItemDto = Mapper.MapModelToDto(todoViewModel);
 
       _todoService.Create(todoItemDto);
       return RedirectToAction("List");
@@ -47,35 +48,15 @@ public class TodoController : Controller
    {
       var todoDto = _todoService.GetById(id);
 
-      var todoViewModel = MapDtoToModel(todoDto);
+      var todoViewModel = Mapper.MapDtoToModel(todoDto);
       return View("Update", todoViewModel);
    }
 
    public IActionResult Update(Guid id, TodoViewModel todoViewModel)
    {
-      var todoItemDto = MapModelToDto(todoViewModel);
+      var todoItemDto = Mapper.MapModelToDto(todoViewModel);
       
       _todoService.Update(id, todoItemDto);
       return RedirectToAction("List");
-   }
-
-   private TodoViewModel MapDtoToModel(TodoItemDto todoItemDto)
-   {
-      return new TodoViewModel
-      {
-         Id = todoItemDto.Id,
-         Text = todoItemDto.Text,
-         IsCompleted = todoItemDto.IsCompleted
-      };
-   }
-
-   private TodoItemDto MapModelToDto(TodoViewModel todoViewModel)
-   {
-    return new TodoItemDto
-    {
-         Id = todoViewModel.Id,
-         Text = todoViewModel.Text,
-         IsCompleted = todoViewModel.IsCompleted
-    };
    }
 }

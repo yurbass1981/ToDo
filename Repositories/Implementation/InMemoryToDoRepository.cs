@@ -30,12 +30,13 @@ public class InMemoryToDoRepository : IToDoRepository
 
     public TodoItemDto GetById(Guid id)
     {
-        return _todoStorage.FirstOrDefault(x => x.Id == id);
+        return _todoStorage.FirstOrDefault(ti => ti.Id == id);
     }
 
     public List<TodoItemDto> GetList()
     {
-        return _todoStorage;
+        //TODO: Replase by foreach
+        return _todoStorage.OrderByDescending(ti => ti.Created).ToList();
     }
 
     public void Update(Guid id, TodoItemDto toDoItem)
