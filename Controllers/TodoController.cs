@@ -37,11 +37,6 @@ public class TodoController : Controller
 
    public IActionResult Create(TodoViewModel todoViewModel)
    {
-      //TODO: we're already setting the Id and Created fields in the _todoService.Create method
-      //so... no need to do it here, all that we need to map is text
-      //no...
-      //I came up with a brillian idea it's better to create map functions that will 
-      // be converting from dto to viewModel and the other way around
       var todoItemDto = MapModelToDto(todoViewModel);
 
       _todoService.Create(todoItemDto);
@@ -58,7 +53,6 @@ public class TodoController : Controller
 
    public IActionResult Update(Guid id, TodoViewModel todoViewModel)
    {
-      //TODO: the same that I said above (in the Create action) we need to create map functions and reuse mapping functionality
       var todoItemDto = MapModelToDto(todoViewModel);
       
       _todoService.Update(id, todoItemDto);
@@ -71,7 +65,6 @@ public class TodoController : Controller
       {
          Id = todoItemDto.Id,
          Text = todoItemDto.Text,
-         Created = todoItemDto.Created,
          IsCompleted = todoItemDto.IsCompleted
       };
    }
@@ -82,7 +75,6 @@ public class TodoController : Controller
     {
          Id = todoViewModel.Id,
          Text = todoViewModel.Text,
-         Created = todoViewModel.Created,
          IsCompleted = todoViewModel.IsCompleted
     };
    }

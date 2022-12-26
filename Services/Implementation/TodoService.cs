@@ -20,11 +20,14 @@ public class TodoService : ITodoService
 
    public void Create(TodoItemDto todoItem)
    {
+      todoItem.Id = Guid.NewGuid();
+      todoItem.Created = DateTime.Now;
       _toDoRepository.Create(todoItem);
    }
 
    public void Update(Guid id, TodoItemDto todoItem)
    {
+      todoItem.Updated = DateTime.Now;
       _toDoRepository.Update(id, todoItem);
    }
 
