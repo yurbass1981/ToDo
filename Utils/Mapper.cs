@@ -11,8 +11,7 @@ public static class Mapper
         {
             Id = todoItem.Id,
             Text = todoItem.Text,
-            IsCompleted = todoItem.IsCompleted,
-            Created = todoItem.Created
+            IsCompleted = todoItem.IsCompleted
         };
     }
 
@@ -22,8 +21,7 @@ public static class Mapper
         {
             Id = toDoViewModel.Id,
             Text = toDoViewModel.Text,
-            IsCompleted = toDoViewModel.IsCompleted,
-            Created = toDoViewModel.Created
+            IsCompleted = toDoViewModel.IsCompleted
         };
     }
 }
