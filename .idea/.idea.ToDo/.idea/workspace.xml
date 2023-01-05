@@ -9,7 +9,7 @@
     <projectFile profileName="ToDo">ToDo.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="" />
+    <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="added a workspace settings for idea" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -121,6 +121,7 @@
       <workItem from="1671271923899" duration="1764000" />
       <workItem from="1671367031327" duration="884000" />
       <workItem from="1671373491792" duration="901000" />
+      <workItem from="1672932766503" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="added update view functionality and cleaned up a bit">
       <created>1670763357277</created>
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670880636474</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added a workspace settings for idea">
+      <created>1672933106845</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672933106845</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +175,8 @@
     <MESSAGE value="added update view functionality and cleaned up a bit" />
     <MESSAGE value="added application profiles inMemory and inFile" />
     <MESSAGE value="added in file module (not implemented yet)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added in file module (not implemented yet)" />
+    <MESSAGE value="added a workspace settings for idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a workspace settings for idea" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
