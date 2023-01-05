@@ -1,4 +1,5 @@
-﻿using ToDo.DTOs;
+﻿using System.Xml.Serialization;
+using ToDo.DTOs;
 
 namespace ToDo.Repositories.Implementation;
 
@@ -6,11 +7,41 @@ public class InFileToDoRepository : IToDoRepository
 {
     public void Create(TodoItemDto toDoItem)
     {
-        throw new NotImplementedException();
+        List<TodoItemDto> todoItemList;
+
+        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
+        {
+            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+        }
+
+        todoItemList.Add(toDoItem);
+
+        using (var streamWriter = new StreamWriter("Resources/data_storage.xml"))
+        {
+            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+            serializer.Serialize(streamWriter, todoItemList);
+        }
     }
 
     public void Delete(Guid id)
     {
+        List<TodoItemDto> todoItemList;
+
+        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
+        {
+            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+        }
+
+        //TODO:
+
+        using (var streamWriter = new StreamWriter("Resources/data_storage.xml"))
+        {
+            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+            serializer.Serialize(streamWriter, todoItemList);
+        }
+
         throw new NotImplementedException();
     }
 
@@ -21,7 +52,15 @@ public class InFileToDoRepository : IToDoRepository
 
     public List<TodoItemDto> GetList()
     {
-        throw new NotImplementedException();
+        List<TodoItemDto> todoItemList;
+
+        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
+        {
+            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+        }
+
+        return todoItemList;
     }
 
     public void Update(Guid id, TodoItemDto toDoItem)

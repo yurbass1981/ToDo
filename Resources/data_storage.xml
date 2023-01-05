@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTodoItemDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TodoItemDto>
+    <Id>72f3e151-a419-45b0-818f-2e8d41285431</Id>
+    <Text>Call Stas</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-05T20:50:35.2501804+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>9baf7efd-2918-4f9b-9f57-e00bb089220d</Id>
+    <Text>Do dishes</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-05T21:04:03.9024154+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>c197395d-56fa-4b20-bce7-cf1855d1a6c1</Id>
+    <Text>Become a great developer</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-05T21:13:10.5646112+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>aa5612af-fe9b-4314-9d00-1ce473ca4259</Id>
+    <Text>Hello MVC</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-05T21:13:17.5138104+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>960b7723-37da-4359-8245-cb153ae09b34</Id>
+    <Text>Call Stas</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-05T21:13:26.9218298+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+</ArrayOfTodoItemDto>
