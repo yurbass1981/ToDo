@@ -2,23 +2,23 @@
 <ArrayOfTodoItemDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TodoItemDto>
     <Id>72f3e151-a419-45b0-818f-2e8d41285431</Id>
-    <Text>Call Stas</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-05T20:50:35.2501804+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
-    <Id>c197395d-56fa-4b20-bce7-cf1855d1a6c1</Id>
-    <Text>Become a great developer</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-05T21:13:10.5646112+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
-    <Id>e2663015-bd7f-4ec3-ad1d-91e0ead9ad33</Id>
     <Text>Do dishes</Text>
     <IsCompleted>false</IsCompleted>
-    <Created>2023-01-06T11:54:10.4988885+03:00</Created>
+    <Created>0001-01-01T00:00:00</Created>
+    <Updated>2023-01-07T11:38:34.3661445+03:00</Updated>
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>f754f140-d5c0-4f20-b7f2-d63e8997a748</Id>
+    <Text>Become a great developer</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-07T11:38:42.6278293+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>b1757738-e2f5-47b0-ae32-8c09f6105ea8</Id>
+    <Text>Call Stas</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-07T11:39:59.647061+03:00</Created>
     <Updated xsi:nil="true" />
   </TodoItemDto>
 </ArrayOfTodoItemDto>

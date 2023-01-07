@@ -31,9 +31,24 @@ public class InFileToDoRepository : IToDoRepository
       WriteListToFile(FILE_PATH, todoItemList);
    }
 
+
+   // public TodoItemDto GetById(Guid id) => ReadListFromFile(FILE_PATH).First(i => i.Id == id);
    public TodoItemDto GetById(Guid id)
    {
-      throw new NotImplementedException();
+      return ReadListFromFile(FILE_PATH).First(i => i.Id == id);
+
+      //   var todoList = ReadListFromFile(FILE_PATH);
+      //   return todoList.First(item => item.Id == id);
+
+      //   foreach (var item in todoList)
+      //   {
+      //      if (item.Id == id)
+      //      {
+      //         return item;
+      //      }
+      //   }
+
+      //   throw new Exception($"TodoItem with id {id} hasn't been found");
    }
 
    public List<TodoItemDto> GetList()
@@ -45,7 +60,20 @@ public class InFileToDoRepository : IToDoRepository
 
    public void Update(Guid id, TodoItemDto toDoItem)
    {
-      throw new NotImplementedException();
+      List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);
+
+      foreach (var item in todoItemList)
+      {
+        if (item.Id == id)
+        {
+            item.Created = toDoItem.Created;
+            item.IsCompleted = toDoItem.IsCompleted;
+            item.Text = toDoItem.Text;
+            item.Updated = DateTime.Now;
+        }
+      }
+
+      WriteListToFile(FILE_PATH, todoItemList);
    }
 
    private List<TodoItemDto> ReadListFromFile(string filePath)
