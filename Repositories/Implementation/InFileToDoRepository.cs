@@ -14,19 +14,20 @@ public class InFileToDoRepository : IToDoRepository
       todoItemList.Add(toDoItem);
       WriteListToFile(FILE_PATH, todoItemList);
    }
-
+            
    public void Delete(Guid id)
    {
       List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);
+      todoItemList.RemoveAll(item => item.Id == id);  
 
-      foreach (var item in todoItemList)
-      {
-         if (item.Id == id)
-         {
-            todoItemList.Remove(item);
-            break;
-         }
-      }
+      //   foreach (var item in todoItemList)
+      //   {
+      //      if (item.Id == id)
+      //      {
+      //         todoItemList.Remove(item);
+      //         break;
+      //      }
+      //   }
 
       WriteListToFile(FILE_PATH, todoItemList);
    }
@@ -64,17 +65,18 @@ public class InFileToDoRepository : IToDoRepository
 
       foreach (var item in todoItemList)
       {
-        if (item.Id == id)
-        {
+         if (item.Id == id)
+         {
             item.Created = toDoItem.Created;
             item.IsCompleted = toDoItem.IsCompleted;
             item.Text = toDoItem.Text;
             item.Updated = DateTime.Now;
-        }
+         }
       }
 
       WriteListToFile(FILE_PATH, todoItemList);
    }
+
 
    private List<TodoItemDto> ReadListFromFile(string filePath)
    {

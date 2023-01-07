@@ -15,10 +15,10 @@
     <Updated xsi:nil="true" />
   </TodoItemDto>
   <TodoItemDto>
-    <Id>b1757738-e2f5-47b0-ae32-8c09f6105ea8</Id>
+    <Id>2dc883aa-5425-4f2d-aa8a-a0409b5ec75f</Id>
     <Text>Call Stas</Text>
     <IsCompleted>false</IsCompleted>
-    <Created>2023-01-07T11:39:59.647061+03:00</Created>
+    <Created>2023-01-07T12:25:28.687303+03:00</Created>
     <Updated xsi:nil="true" />
   </TodoItemDto>
 </ArrayOfTodoItemDto>
