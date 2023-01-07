@@ -5,66 +5,68 @@ namespace ToDo.Repositories.Implementation;
 
 public class InFileToDoRepository : IToDoRepository
 {
-    public void Create(TodoItemDto toDoItem)
-    {
-        List<TodoItemDto> todoItemList;
+   private const string FILE_PATH = "Resources/data_storage.xml";
 
-        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
-        }
 
-        todoItemList.Add(toDoItem);
+   public void Create(TodoItemDto toDoItem)
+   {
+      List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);
+      todoItemList.Add(toDoItem);
+      WriteListToFile(FILE_PATH, todoItemList);
+   }
 
-        using (var streamWriter = new StreamWriter("Resources/data_storage.xml"))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-            serializer.Serialize(streamWriter, todoItemList);
-        }
-    }
+   public void Delete(Guid id)
+   {
+      List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);
 
-    public void Delete(Guid id)
-    {
-        List<TodoItemDto> todoItemList;
+      foreach (var item in todoItemList)
+      {
+         if (item.Id == id)
+         {
+            todoItemList.Remove(item);
+            break;
+         }
+      }
 
-        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
-        }
+      WriteListToFile(FILE_PATH, todoItemList);
+   }
 
-        //TODO:
+   public TodoItemDto GetById(Guid id)
+   {
+      throw new NotImplementedException();
+   }
 
-        using (var streamWriter = new StreamWriter("Resources/data_storage.xml"))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-            serializer.Serialize(streamWriter, todoItemList);
-        }
+   public List<TodoItemDto> GetList()
+   {
+      return ReadListFromFile(FILE_PATH);
+      //   List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);     
+      //   return todoItemList;
+   }
 
-        throw new NotImplementedException();
-    }
+   public void Update(Guid id, TodoItemDto toDoItem)
+   {
+      throw new NotImplementedException();
+   }
 
-    public TodoItemDto GetById(Guid id)
-    {
-        throw new NotImplementedException();
-    }
+   private List<TodoItemDto> ReadListFromFile(string filePath)
+   {
+      List<TodoItemDto> todoItemList = null;
 
-    public List<TodoItemDto> GetList()
-    {
-        List<TodoItemDto> todoItemList;
+      using (var streamReader = new StreamReader(filePath))
+      {
+         var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+         todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+      }
 
-        using (var streamReader = new StreamReader("Resources/data_storage.xml"))
-        {
-            var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-            todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
-        }
+      return todoItemList;
+   }
 
-        return todoItemList;
-    }
-
-    public void Update(Guid id, TodoItemDto toDoItem)
-    {
-        throw new NotImplementedException();
-    }
+   private void WriteListToFile(string filePath, List<TodoItemDto> todoItems)
+   {
+      using (var streamWriter = new StreamWriter(filePath))
+      {
+         var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+         serializer.Serialize(streamWriter, todoItems);
+      }
+   }
 }

@@ -8,13 +8,6 @@
     <Updated xsi:nil="true" />
   </TodoItemDto>
   <TodoItemDto>
-    <Id>9baf7efd-2918-4f9b-9f57-e00bb089220d</Id>
-    <Text>Do dishes</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-05T21:04:03.9024154+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
     <Id>c197395d-56fa-4b20-bce7-cf1855d1a6c1</Id>
     <Text>Become a great developer</Text>
     <IsCompleted>false</IsCompleted>
@@ -22,17 +15,10 @@
     <Updated xsi:nil="true" />
   </TodoItemDto>
   <TodoItemDto>
-    <Id>aa5612af-fe9b-4314-9d00-1ce473ca4259</Id>
-    <Text>Hello MVC</Text>
+    <Id>e2663015-bd7f-4ec3-ad1d-91e0ead9ad33</Id>
+    <Text>Do dishes</Text>
     <IsCompleted>false</IsCompleted>
-    <Created>2023-01-05T21:13:17.5138104+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
-    <Id>960b7723-37da-4359-8245-cb153ae09b34</Id>
-    <Text>Call Stas</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-05T21:13:26.9218298+03:00</Created>
+    <Created>2023-01-06T11:54:10.4988885+03:00</Created>
     <Updated xsi:nil="true" />
   </TodoItemDto>
 </ArrayOfTodoItemDto>

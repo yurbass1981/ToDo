@@ -13,7 +13,6 @@ public class InMemoryToDoRepository : IToDoRepository
 
     public void Delete(Guid id)
     {
-        //TODO: throw an exception if we didin't find the needed element of the _todoStorage collection
         TodoItemDto toDoItemToDelete = null;
 
         foreach (var item in _todoStorage)
