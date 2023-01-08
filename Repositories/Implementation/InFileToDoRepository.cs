@@ -3,7 +3,7 @@ using ToDo.DTOs;
 
 namespace ToDo.Repositories.Implementation;
 
-public class InFileToDoRepository : IToDoRepository
+public class InFileToDoRepository : IToDoRepository 
 {
    private const string FILE_PATH = "Resources/data_storage.xml";
 
@@ -12,7 +12,7 @@ public class InFileToDoRepository : IToDoRepository
    {
       List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);
       todoItemList.Add(toDoItem);
-      WriteListToFile(FILE_PATH, todoItemList);
+      XmlParser.WriteListToFile(FILE_PATH, todoItemList);
    }
             
    public void Delete(Guid id)
@@ -78,25 +78,25 @@ public class InFileToDoRepository : IToDoRepository
    }
 
 
-   private List<TodoItemDto> ReadListFromFile(string filePath)
-   {
-      List<TodoItemDto> todoItemList = null;
+   // private List<TodoItemDto> ReadListFromFile(string filePath)
+   // {
+   //    List<TodoItemDto> todoItemList = null;
 
-      using (var streamReader = new StreamReader(filePath))
-      {
-         var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-         todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
-      }
+   //    using (var streamReader = new StreamReader(filePath))
+   //    {
+   //       var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+   //       todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+   //    }
 
-      return todoItemList;
-   }
+   //    return todoItemList;
+   // }
 
-   private void WriteListToFile(string filePath, List<TodoItemDto> todoItems)
-   {
-      using (var streamWriter = new StreamWriter(filePath))
-      {
-         var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-         serializer.Serialize(streamWriter, todoItems);
-      }
-   }
+   // private void WriteListToFile(string filePath, List<TodoItemDto> todoItems)
+   // {
+   //    using (var streamWriter = new StreamWriter(filePath))
+   //    {
+   //       var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
+   //       serializer.Serialize(streamWriter, todoItems);
+   //    }
+   // }
 }
