@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTodoItemDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TodoItemDto>
-    <Id>72f3e151-a419-45b0-818f-2e8d41285431</Id>
-    <Text>Do dishes</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>0001-01-01T00:00:00</Created>
-    <Updated>2023-01-07T11:38:34.3661445+03:00</Updated>
-  </TodoItemDto>
-  <TodoItemDto>
     <Id>f754f140-d5c0-4f20-b7f2-d63e8997a748</Id>
     <Text>Become a great developer</Text>
     <IsCompleted>false</IsCompleted>
@@ -19,6 +12,13 @@
     <Text>Call Stas</Text>
     <IsCompleted>false</IsCompleted>
     <Created>2023-01-07T12:25:28.687303+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>18cd1438-6e40-4176-ae33-83e9b2f0748c</Id>
+    <Text>Do dishes</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-10T18:43:34.0809399+03:00</Created>
     <Updated xsi:nil="true" />
   </TodoItemDto>
 </ArrayOfTodoItemDto>
