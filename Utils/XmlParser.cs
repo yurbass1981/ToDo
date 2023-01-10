@@ -1,30 +1,28 @@
-using System;
 using System.Xml.Serialization;
-using ToDo.DTOs;
 
 namespace ToDo.Utils
 {
-    public static class XmlParser
+    public static class XmlParser<T>
     {
-        public static List<TodoItemDto> ReadListFromFile(string filePath)
+        public static T Read(string filePath)
         {
-            List<TodoItemDto> todoItemList = null;
+            T deserializedObject = default;
 
             using (var streamReader = new StreamReader(filePath))
             {
-                var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-                todoItemList = serializer.Deserialize(streamReader) as List<TodoItemDto>;
+                var serializer = new XmlSerializer(typeof(T));
+                deserializedObject = (T)serializer.Deserialize(streamReader);
             }
 
-            return todoItemList;
+            return deserializedObject;
         }
 
-        public static void WriteListToFile(string filePath, List<TodoItemDto> todoItems)
+        public static void Write(string filePath, T objectToSerialize)
         {
             using (var streamWriter = new StreamWriter(filePath))
             {
-                var serializer = new XmlSerializer(typeof(List<TodoItemDto>));
-                serializer.Serialize(streamWriter, todoItems);
+                var serializer = new XmlSerializer(typeof(T));
+                serializer.Serialize(streamWriter, objectToSerialize);
             }
         }
     }
