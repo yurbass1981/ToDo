@@ -1,31 +1,18 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
-namespace ToDo.Utils
+namespace ToDo.Utils;
+
+public static class JsonParser<T>
 {
-    public static class JsonParser<T>
+    public static T Read(string filePath)
     {
-        public static T Read(string filePath)
-        {
-            T deserializedObject = default;
+        var jsonString = File.ReadAllText(filePath);
+        return JsonSerializer.Deserialize<T>(jsonString);
+    }
 
-            using (var streamReader = new StreamReader(filePath))
-            {
-                var serializer = JsonSerializer.Serialize(typeof(T));
-                deserializedObject = (T)JsonSerializer.Deserialize(streamReader);
-            }
-            return deserializedObject;
-        }
-
-        public static void Write(string filePath, T objectToSerialize)
-        {
-            using (var streamWriter = new StreamWriter(filePath))
-            {
-                var serializer = JsonSerializer.Serialize(typeof(T));
-
-                
-            }
-        }
-        
+    public static void Write(string filePath, T objectToSerialize)
+    {
+        var jsonString = JsonSerializer.Serialize<T>(objectToSerialize);
+        File.WriteAllText(filePath, jsonString);
     }
 }
