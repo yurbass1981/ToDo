@@ -12,7 +12,11 @@ public static class JsonParser<T>
 
     public static void Write(string filePath, T objectToSerialize)
     {
-        var jsonString = JsonSerializer.Serialize<T>(objectToSerialize);
+        var jsonString = JsonSerializer.Serialize<T>(objectToSerialize, new JsonSerializerOptions()
+        {
+            WriteIndented = true
+        });
+
         File.WriteAllText(filePath, jsonString);
     }
 }

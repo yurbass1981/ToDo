@@ -3,5 +3,6 @@
 public enum DataStorageTypeEnum
 {
     InMemory,
-    InFile
+    InXmlFile,
+    InJsonFile
 }

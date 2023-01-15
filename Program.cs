@@ -11,14 +11,19 @@ builder.Services.AddControllersWithViews();
 
 var storageType = builder.Configuration.GetSection("StorageType").Value;
 
-if (storageType == DataStorageTypeEnum.InMemory.ToString()) 
+if (storageType == DataStorageTypeEnum.InMemory.ToString())
 {
     builder.Services.AddSingleton<IToDoRepository, InMemoryToDoRepository>();
 }
 
-if (storageType == DataStorageTypeEnum.InFile.ToString())
+if (storageType == DataStorageTypeEnum.InXmlFile.ToString())
 {
-    builder.Services.AddScoped<IToDoRepository, InFileToDoRepository>();
+    builder.Services.AddScoped<IToDoRepository, InXmlFileToDoRepository>();
+}
+
+if (storageType == DataStorageTypeEnum.InJsonFile.ToString())
+{
+    builder.Services.AddScoped<IToDoRepository, InJsonFileToDoRepository>();
 }
 
 

@@ -4,17 +4,17 @@ using ToDo.Utils;
 
 namespace ToDo.Repositories.Implementation;
 
-public class InFileToDoRepository : IToDoRepository
+public class InXmlFileToDoRepository : IToDoRepository
 {
     private readonly string _filePath;
 
-    public InFileToDoRepository(IConfiguration config)
+    public InXmlFileToDoRepository(IConfiguration config)
     {
-         _filePath = config.GetSection("StorageFilePath").Value;
-         if (string.IsNullOrEmpty(_filePath))
-         {
+        _filePath = config.GetSection("StorageFilePath").Value;
+        if (string.IsNullOrEmpty(_filePath))
+        {
             throw new Exception("FilePath hasn't been found");
-         }
+        }
     }
 
 
