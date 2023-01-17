@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTodoItemDto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TodoItemDto>
-    <Id>2dc883aa-5425-4f2d-aa8a-a0409b5ec75f</Id>
-    <Text>Call Stas</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-07T12:25:28.687303+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
-    <Id>18cd1438-6e40-4176-ae33-83e9b2f0748c</Id>
-    <Text>Do dishes</Text>
-    <IsCompleted>false</IsCompleted>
-    <Created>2023-01-10T18:43:34.0809399+03:00</Created>
-    <Updated xsi:nil="true" />
-  </TodoItemDto>
-  <TodoItemDto>
-    <Id>1e53a5f6-bc2c-4bf4-b178-2ce835529b5e</Id>
+    <Id>81c27a27-1f40-4e8c-ae75-ef34a906b5f9</Id>
     <Text>Become a great developer</Text>
     <IsCompleted>false</IsCompleted>
-    <Created>2023-01-10T20:40:31.7008141+03:00</Created>
+    <Created>2023-01-17T20:03:15.7800335+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>b03854dd-ab7f-42e6-a3cc-f465bcd31767</Id>
+    <Text>Do dishes</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-17T20:03:22.8158507+03:00</Created>
+    <Updated xsi:nil="true" />
+  </TodoItemDto>
+  <TodoItemDto>
+    <Id>53ee00d4-731b-4ed3-86de-33c1e25c1e20</Id>
+    <Text>Call Stas</Text>
+    <IsCompleted>false</IsCompleted>
+    <Created>2023-01-17T20:03:29.6150346+03:00</Created>
     <Updated xsi:nil="true" />
   </TodoItemDto>
 </ArrayOfTodoItemDto>

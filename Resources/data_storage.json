@@ -1,23 +1,23 @@
 [
   {
-    "Id": "44eb2e7e-8e46-4ebb-a51a-3d9b4f657d9e",
+    "Id": "9c6c7217-6683-44aa-9389-59cb45b528b4",
     "Text": "Become a great developer",
     "IsCompleted": false,
-    "Created": "2023-01-15T11:41:15.677523+03:00",
+    "Created": "2023-01-17T19:47:43.8596368+03:00",
     "Updated": null
   },
   {
-    "Id": "fbf3c138-5eb6-4d14-a964-14dfc7132b6d",
+    "Id": "75bd25e8-cdf2-4af8-90b9-68d0d709b87a",
     "Text": "Call Stas",
     "IsCompleted": false,
-    "Created": "2023-01-15T11:41:28.8401214+03:00",
+    "Created": "2023-01-17T19:47:48.9328046+03:00",
     "Updated": null
   },
   {
-    "Id": "65e43815-0dfc-4db4-b03f-eb989f6c29fe",
-    "Text": "Hello MVC",
+    "Id": "af08bd81-008f-4d75-8f8f-430be2d91c60",
+    "Text": "Do dishes",
     "IsCompleted": false,
-    "Created": "0001-01-01T00:00:00",
-    "Updated": "2023-01-15T11:44:05.6571975+03:00"
+    "Created": "2023-01-17T19:47:54.6492824+03:00",
+    "Updated": null
   }
 ]

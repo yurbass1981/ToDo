@@ -74,6 +74,13 @@ public class InXmlFileToDoRepository : IToDoRepository
 
     public List<TodoItemDto> GetList()
     {
+        if (!File.Exists(_filePath))
+        {
+            var fs = File.Create(_filePath);
+            fs.Close();
+            XmlParser<List<TodoItemDto>>.Write(_filePath, new List<TodoItemDto>());
+        }
+        
         return XmlParser<List<TodoItemDto>>.Read(_filePath);
         //   List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);     
         //   return todoItemList;

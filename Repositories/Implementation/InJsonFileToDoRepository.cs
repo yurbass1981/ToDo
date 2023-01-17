@@ -49,11 +49,13 @@ namespace ToDo.Repositories.Implementation
 
         public List<TodoItemDto> GetList()
         {
-            if (File.Exists(_filePath))
+            if (!File.Exists(_filePath))
             {
-                var isFileExists = File.Exists(_filePath);
+                var fs = File.Create(_filePath);
+                fs.Close();
+                JsonParser<List<TodoItemDto>>.Write(_filePath, new List<TodoItemDto>());
             }
-            
+
             return JsonParser<List<TodoItemDto>>.Read(_filePath);
         }
 
