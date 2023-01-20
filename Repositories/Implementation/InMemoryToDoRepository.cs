@@ -13,16 +13,21 @@ public class InMemoryToDoRepository : IToDoRepository
 
     public void Delete(Guid id)
     {
-        TodoItemDto toDoItemToDelete = null;
-
-        foreach (var item in _todoStorage)
+        TodoItemDto toDoItemToDelete = _todoStorage.FirstOrDefault(item => item.Id == id);
+        if (toDoItemToDelete == null)
         {
-            if (item.Id == id)
-            {
-                toDoItemToDelete = item;
-                break;
-            }
+            throw new Exception($"toDoItemToDelete whith id {id} hasn't been found");
         }
+
+        // TodoItemDto toDoItemToDelete = null;
+        // foreach (var item in _todoStorage)
+        // {
+        //     if (item.Id == id)
+        //     {
+        //         toDoItemToDelete = item;
+        //         break;
+        //     }
+        // }
 
         _todoStorage.Remove(toDoItemToDelete);
     }
