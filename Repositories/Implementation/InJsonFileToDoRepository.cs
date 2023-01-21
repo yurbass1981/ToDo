@@ -62,18 +62,20 @@ namespace ToDo.Repositories.Implementation
 
         public void Update(Guid id, TodoItemDto toDoItem)
         {
-            List<TodoItemDto> todoItemList = JsonParser<List<TodoItemDto>>.Read(_filePath);
-
-            foreach (var item in todoItemList)
-            {
-                if (item.Id == id)
+            List<TodoItemDto> todoItemList = JsonParser<List<TodoItemDto>>.Read(_filePath)
+                .Select(item =>
                 {
-                    item.Created = toDoItem.Created;
-                    item.IsCompleted = toDoItem.IsCompleted;
-                    item.Text = toDoItem.Text;
-                    item.Updated = DateTime.Now;
-                }
-            }
+                    if (item.Id == id)
+                    {
+                        item.Created = toDoItem.Created;
+                        item.IsCompleted = toDoItem.IsCompleted;
+                        item.Text = toDoItem.Text;
+                        item.Updated = DateTime.Now;
+                    }
+
+                    return item;
+                })
+                .ToList();
 
             JsonParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
         }

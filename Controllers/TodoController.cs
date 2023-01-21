@@ -18,15 +18,8 @@ public class TodoController : Controller
    public IActionResult List()
    {
       var todoItemDtoList = _todoService.GetList();
-      var viewModelList = new List<TodoViewModel>();
-      
-
-      //TODO: we need to learn LINQ and rewrite this part of code to LINQ expression
-      foreach (var todoDto in todoItemDtoList)
-      {
-         var todoViewModel = Mapper.MapDtoToModel(todoDto);
-         viewModelList.Add(todoViewModel);
-      }
+      var viewModelList = todoItemDtoList.Select(todoDto => Mapper.MapDtoToModel(todoDto));
+     
       return View(viewModelList);
    }
 
