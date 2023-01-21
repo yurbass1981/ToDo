@@ -19,13 +19,23 @@
       }
     },
 
-    "Dev_InFile": {
+    "Dev_InXmlFile": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5086",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development.InFileStorage"
+        "ASPNETCORE_ENVIRONMENT": "Development.InXmlFileStorage"
+      }
+    },
+
+    "Dev_InJsonFile": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5086",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development.InJsonFileStorage"
       }
     },
 
