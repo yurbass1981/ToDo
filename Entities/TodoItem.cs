@@ -1,6 +1,6 @@
-namespace ToDo.DTOs;
+namespace ToDo.Entities;
 
-public class TodoItemDto
+public class TodoItem
 {
     public Guid Id { get; set; }
     public string Text { get; set; }

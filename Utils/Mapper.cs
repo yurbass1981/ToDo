@@ -1,11 +1,11 @@
-using ToDo.DTOs;
+using ToDo.Entities;
 using ToDo.Models;
 
 namespace ToDo.Utils;
 
 public static class Mapper
 {
-    public static TodoViewModel MapDtoToModel(TodoItemDto todoItem)
+    public static TodoViewModel MapEntityToModel(TodoItem todoItem)
     {
         return new TodoViewModel
         {
@@ -15,9 +15,9 @@ public static class Mapper
         };
     }
 
-    public static TodoItemDto MapModelToDto(TodoViewModel toDoViewModel)
+    public static TodoItem MapModelToEntity(TodoViewModel toDoViewModel)
     {
-        return new TodoItemDto()
+        return new TodoItem()
         {
             Id = toDoViewModel.Id,
             Text = toDoViewModel.Text,

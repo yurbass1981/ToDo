@@ -1,5 +1,4 @@
-﻿using System.Xml.Serialization;
-using ToDo.DTOs;
+﻿using ToDo.Entities;
 using ToDo.Utils;
 
 namespace ToDo.Repositories.Implementation;
@@ -18,16 +17,16 @@ public class InXmlFileToDoRepository : IToDoRepository
     }
 
 
-    public void Create(TodoItemDto toDoItem)
+    public void Create(TodoItem toDoItem)
     {
-        List<TodoItemDto> todoItemList = XmlParser<List<TodoItemDto>>.Read(_filePath);
+        List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
         todoItemList.Add(toDoItem);
-        XmlParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+        XmlParser<List<TodoItem>>.Write(_filePath, todoItemList);
     }
 
     public void Delete(Guid id)
     {
-        List<TodoItemDto> todoItemList = XmlParser<List<TodoItemDto>>.Read(_filePath);
+        List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
         if (todoItemToRemove == null)
@@ -49,14 +48,14 @@ public class InXmlFileToDoRepository : IToDoRepository
         //      }
         //   }
 
-        XmlParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+        XmlParser<List<TodoItem>>.Write(_filePath, todoItemList);
     }
 
 
-    // public TodoItemDto GetById(Guid id) => ReadListFromFile(FILE_PATH).First(i => i.Id == id);
-    public TodoItemDto GetById(Guid id)
+    // public TodoItem GetById(Guid id) => ReadListFromFile(FILE_PATH).First(i => i.Id == id);
+    public TodoItem GetById(Guid id)
     {
-        return XmlParser<List<TodoItemDto>>.Read(_filePath).First(i => i.Id == id);
+        return XmlParser<List<TodoItem>>.Read(_filePath).First(i => i.Id == id);
 
         //   var todoList = ReadListFromFile(FILE_PATH);
         //   return todoList.First(item => item.Id == id);
@@ -72,23 +71,23 @@ public class InXmlFileToDoRepository : IToDoRepository
         //   throw new Exception($"TodoItem with id {id} hasn't been found");
     }
 
-    public List<TodoItemDto> GetList()
+    public List<TodoItem> GetList()
     {
         if (!File.Exists(_filePath))
         {
             var fs = File.Create(_filePath);
             fs.Close();
-            XmlParser<List<TodoItemDto>>.Write(_filePath, new List<TodoItemDto>());
+            XmlParser<List<TodoItem>>.Write(_filePath, new List<TodoItem>());
         }
         
-        return XmlParser<List<TodoItemDto>>.Read(_filePath);
-        //   List<TodoItemDto> todoItemList = ReadListFromFile(FILE_PATH);     
+        return XmlParser<List<TodoItem>>.Read(_filePath);
+        //   List<TodoItem> todoItemList = ReadListFromFile(FILE_PATH);     
         //   return todoItemList;
     }
 
-    public void Update(Guid id, TodoItemDto toDoItem)
+    public void Update(Guid id, TodoItem toDoItem)
     {
-        List<TodoItemDto> todoItemList = XmlParser<List<TodoItemDto>>.Read(_filePath);
+        List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         foreach (var item in todoItemList)
         {
@@ -101,6 +100,6 @@ public class InXmlFileToDoRepository : IToDoRepository
             }
         }
 
-        XmlParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+        XmlParser<List<TodoItem>>.Write(_filePath, todoItemList);
     }
 }

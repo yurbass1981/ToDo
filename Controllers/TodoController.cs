@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ToDo.Models;
-using ToDo.DTOs;
 using ToDo.Services;
 using ToDo.Utils;
 
@@ -17,8 +16,8 @@ public class TodoController : Controller
 
    public IActionResult List()
    {
-      var todoItemDtoList = _todoService.GetList();
-      var viewModelList = todoItemDtoList.Select(todoDto => Mapper.MapDtoToModel(todoDto));
+      var todoItemList = _todoService.GetList();
+      var viewModelList = todoItemList.Select(Mapper.MapEntityToModel);
      
       return View(viewModelList);
    }
@@ -31,25 +30,25 @@ public class TodoController : Controller
 
    public IActionResult Create(TodoViewModel todoViewModel)
    {
-      var todoItemDto = Mapper.MapModelToDto(todoViewModel);
+      var todoItem = Mapper.MapModelToEntity(todoViewModel);
 
-      _todoService.Create(todoItemDto);
+      _todoService.Create(todoItem);
       return RedirectToAction("List");
    }
 
    public IActionResult UpdateView(Guid id)
    {
-      var todoDto = _todoService.GetById(id);
+      var todoItem = _todoService.GetById(id);
 
-      var todoViewModel = Mapper.MapDtoToModel(todoDto);
+      var todoViewModel = Mapper.MapEntityToModel(todoItem);
       return View("Update", todoViewModel);
    }
 
    public IActionResult Update(Guid id, TodoViewModel todoViewModel)
    {
-      var todoItemDto = Mapper.MapModelToDto(todoViewModel);
+      var todoItem = Mapper.MapModelToEntity(todoViewModel);
       
-      _todoService.Update(id, todoItemDto);
+      _todoService.Update(id, todoItem);
       return RedirectToAction("List");
    }
 }

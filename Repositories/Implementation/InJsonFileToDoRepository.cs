@@ -1,4 +1,4 @@
-using ToDo.DTOs;
+using ToDo.Entities;
 using ToDo.Utils;
 
 namespace ToDo.Repositories.Implementation
@@ -17,17 +17,17 @@ namespace ToDo.Repositories.Implementation
         }
 
 
-        public void Create(TodoItemDto toDoItem)
+        public void Create(TodoItem toDoItem)
         {
-            List<TodoItemDto> todoItemList = JsonParser<List<TodoItemDto>>.Read(_filePath);
+            List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath);
             todoItemList.Add(toDoItem);
-            JsonParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+            JsonParser<List<TodoItem>>.Write(_filePath, todoItemList);
         }
 
 
         public void Delete(Guid id)
         {
-            List<TodoItemDto> todoItemList = JsonParser<List<TodoItemDto>>.Read(_filePath);
+            List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath);
 
             var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
             if (todoItemToRemove == null)
@@ -37,32 +37,32 @@ namespace ToDo.Repositories.Implementation
 
             todoItemList.Remove(todoItemToRemove);
 
-            JsonParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+            JsonParser<List<TodoItem>>.Write(_filePath, todoItemList);
         }
 
 
-        public TodoItemDto GetById(Guid id)
+        public TodoItem GetById(Guid id)
         {
-            return JsonParser<List<TodoItemDto>>.Read(_filePath).First(i => i.Id == id);
+            return JsonParser<List<TodoItem>>.Read(_filePath).First(i => i.Id == id);
         }
 
 
-        public List<TodoItemDto> GetList()
+        public List<TodoItem> GetList()
         {
             if (!File.Exists(_filePath))
             {
                 var fs = File.Create(_filePath);
                 fs.Close();
-                JsonParser<List<TodoItemDto>>.Write(_filePath, new List<TodoItemDto>());
+                JsonParser<List<TodoItem>>.Write(_filePath, new List<TodoItem>());
             }
 
-            return JsonParser<List<TodoItemDto>>.Read(_filePath);
+            return JsonParser<List<TodoItem>>.Read(_filePath);
         }
 
 
-        public void Update(Guid id, TodoItemDto toDoItem)
+        public void Update(Guid id, TodoItem toDoItem)
         {
-            List<TodoItemDto> todoItemList = JsonParser<List<TodoItemDto>>.Read(_filePath)
+            List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath)
                 .Select(item =>
                 {
                     if (item.Id == id)
@@ -77,7 +77,7 @@ namespace ToDo.Repositories.Implementation
                 })
                 .ToList();
 
-            JsonParser<List<TodoItemDto>>.Write(_filePath, todoItemList);
+            JsonParser<List<TodoItem>>.Write(_filePath, todoItemList);
         }
     }
 }

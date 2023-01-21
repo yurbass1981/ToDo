@@ -1,12 +1,12 @@
-﻿using ToDo.DTOs;
+﻿using ToDo.Entities;
 
 namespace ToDo.Repositories;
 
 public interface IToDoRepository
 {
-    List<TodoItemDto> GetList();
-    void Create(TodoItemDto toDoItem);
-    void Update(Guid id, TodoItemDto toDoItem);
+    List<TodoItem> GetList();
+    void Create(TodoItem toDoItem);
+    void Update(Guid id, TodoItem toDoItem);
     void Delete(Guid id);
-    TodoItemDto GetById(Guid id);
+    TodoItem GetById(Guid id);
 }

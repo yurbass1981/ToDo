@@ -1,4 +1,4 @@
-﻿using ToDo.DTOs;
+﻿using ToDo.Entities;
 using ToDo.Repositories;
 
 namespace ToDo.Services.Implementation;
@@ -13,19 +13,19 @@ public class TodoService : ITodoService
    }
 
 
-   public List<TodoItemDto> GetList()
+   public List<TodoItem> GetList()
    {
       return _toDoRepository.GetList();
    }
 
-   public void Create(TodoItemDto todoItem)
+   public void Create(TodoItem todoItem)
    {
       todoItem.Id = Guid.NewGuid();
       todoItem.Created = DateTime.Now;
       _toDoRepository.Create(todoItem);
    }
 
-   public void Update(Guid id, TodoItemDto todoItem)
+   public void Update(Guid id, TodoItem todoItem)
    {
       todoItem.Updated = DateTime.Now;
       _toDoRepository.Update(id, todoItem);
@@ -36,7 +36,7 @@ public class TodoService : ITodoService
       _toDoRepository.Delete(id);
    }
 
-   public TodoItemDto GetById(Guid id)
+   public TodoItem GetById(Guid id)
    {
       var itemById = _toDoRepository.GetById(id);
 
