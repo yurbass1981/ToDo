@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using ToDo.Enums;
 using ToDo.Repositories;
 using ToDo.Repositories.Implementation;
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<AppContext>(_ =>
+    new AppContext(builder.Configuration.GetConnectionString["default"]));
 
 var storageType = builder.Configuration.GetSection("StorageType").Value;
 
