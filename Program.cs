@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ToDo.DBL;
 using ToDo.Enums;
 using ToDo.Repositories;
 using ToDo.Repositories.Implementation;
@@ -10,8 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddTransient<AppContext>(_ =>
-    new AppContext(builder.Configuration.GetConnectionString["default"]));
+//db configuration
+var connection = builder.Configuration.GetConnectionString("default");
+builder.Services.AddDbContext<ApplicationContext>(options => options
+    .UseSqlServer(connection));
 
 var storageType = builder.Configuration.GetSection("StorageType").Value;
 
@@ -34,8 +37,6 @@ if (storageType == DataStorageTypeEnum.InJsonFile.ToString())
 builder.Services.AddScoped<ITodoService, TodoService>();
 
 var app = builder.Build();
-
-
 
 
 app.UseStaticFiles();
