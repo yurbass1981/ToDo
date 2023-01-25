@@ -4,5 +4,6 @@ public enum DataStorageTypeEnum
 {
     InMemory,
     InXmlFile,
-    InJsonFile
+    InJsonFile,
+    InDB
 }
