@@ -11,11 +11,8 @@
     <projectFile profileName="ToDo">ToDo.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="clean up a bit">
+    <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="added new DataStorageEnum">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.Development.InDB.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.InDB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
@@ -49,6 +46,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc49035babffe11a8d447453b4d617dc9b2cc429146df187198392c604fd3/FileInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7205a1cb175f44fd82ad11831749524320bc6b5956906312f71de7881db4e/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/xobbit_26/projects/ToDo/DBL/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/xobbit_26/projects/ToDo/Enums/DataStorageTypeEnum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/xobbit_26/projects/ToDo/Enums/DataStorageTypeEnum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/xobbit_26/projects/ToDo/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/xobbit_26/projects/ToDo/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/ToDo/List.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" root0="FORCE_HIGHLIGHTING" />
@@ -70,23 +70,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/xobbit_26/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "rider.external.source.directories": [
+      "/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache",
+      "/Users/xobbit_26/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache",
+      "/Users/xobbit_26/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ToDo: Dev_InDB">
     <configuration name="ToDo: Dev_InDB" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ToDo.csproj" />
@@ -176,7 +179,7 @@
       <workItem from="1672932766503" duration="357000" />
       <workItem from="1674288223810" duration="1491000" />
       <workItem from="1674580086135" duration="2651000" />
-      <workItem from="1674674531994" duration="3555000" />
+      <workItem from="1674674531994" duration="4969000" />
     </task>
     <task id="LOCAL-00001" summary="added update view functionality and cleaned up a bit">
       <created>1670763357277</created>
@@ -234,7 +237,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674674945524</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cleaned up a bit">
+      <created>1674678205156</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674678205156</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added new DataStorageEnum">
+      <created>1674678547906</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674678547906</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +280,28 @@
     <MESSAGE value="created new launch settings for json file" />
     <MESSAGE value="asdfadfafds" />
     <MESSAGE value="clean up a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up a bit" />
+    <MESSAGE value="cleaned up a bit" />
+    <MESSAGE value="added new DataStorageEnum" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new DataStorageEnum" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Program.cs</url>
+          <line>26</line>
+          <properties documentPath="$PROJECT_DIR$/Program.cs" initialLine="26" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="1022" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1099" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
