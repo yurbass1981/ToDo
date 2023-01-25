@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using ToDo.DBL.Entities;
 using ToDo.DBL.EntityConfiguration;
-using ToDo.Entities;
 
 namespace ToDo.DBL;
 

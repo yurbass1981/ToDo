@@ -1,4 +1,4 @@
-namespace ToDo.Entities;
+namespace ToDo.DBL.Entities;
 
 public class TodoItem
 {
