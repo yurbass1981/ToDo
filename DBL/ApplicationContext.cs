@@ -14,7 +14,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        new TodoItemEntityTypeConfiguration()
-            .Configure(modelBuilder.Entity<TodoItem>());
+        new TodoItemEntityTypeConfiguration().Configure(modelBuilder.Entity<TodoItem>());
     }
 }

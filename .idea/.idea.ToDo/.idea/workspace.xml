@@ -11,9 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef691304-9fcf-4767-8094-6a5d815a023a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DBL/EntityConfiguration/TodoItemEntityTypeConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ToDo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DBL/AppContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DBL/AppContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DBL/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DBL/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ToDo.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +40,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5cf396ad80f2a5878415ac224dad95e8e831f6ada6b8dac9ef7c3d17eb993911/SafeFileHandle.Unix.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6c70cb3d1b8221dbaed4098b32efe8fa94853dd1be45bd23baca4279296b12/File.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7fe79a50e72b83d86bcb87e6e177c55c4e64595e94e8591a17f6ec586ffc9f71/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/868a65484b4e11647359ec480e9362c8f1ab2d13fd66c5d94cfc62d74db7dd5/AppContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d4f4ac7db6d2c5d183ab2d92602280ed4349fd6e6a1b6313546b3d01fdab5/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cc49035babffe11a8d447453b4d617dc9b2cc429146df187198392c604fd3/FileInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e7205a1cb175f44fd82ad11831749524320bc6b5956906312f71de7881db4e/XmlSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/xobbit_26/projects/ToDo/DBL/ApplicationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/ToDo/List.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map" root0="FORCE_HIGHLIGHTING" />
@@ -152,7 +154,8 @@
       <workItem from="1671373491792" duration="901000" />
       <workItem from="1672932766503" duration="357000" />
       <workItem from="1674288223810" duration="1491000" />
-      <workItem from="1674580086135" duration="578000" />
+      <workItem from="1674580086135" duration="2651000" />
+      <workItem from="1674674531994" duration="393000" />
     </task>
     <task id="LOCAL-00001" summary="added update view functionality and cleaned up a bit">
       <created>1670763357277</created>
@@ -196,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674289117776</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="asdfadfafds">
+      <created>1674580954492</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674580954492</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +233,8 @@
     <MESSAGE value="added a workspace settings for idea" />
     <MESSAGE value="renamed dto to entity" />
     <MESSAGE value="created new launch settings for json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="created new launch settings for json file" />
+    <MESSAGE value="asdfadfafds" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdfadfafds" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
