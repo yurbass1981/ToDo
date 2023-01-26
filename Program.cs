@@ -24,9 +24,9 @@ if (storageType == DataStorageTypeEnum.InDB.ToString())
 builder.Services.AddScoped<ITodoService, TodoService>();
 
 //db configuration
-var connection = builder.Configuration.GetConnectionString("postgres_image");
+var connection = builder.Configuration.GetConnectionString("default");
 builder.Services.AddDbContext<ApplicationContext>(options => options
-    .UseNpgsql(connection));
+    .UseSqlServer(connection));
 
 var app = builder.Build();
 app.UseStaticFiles();
