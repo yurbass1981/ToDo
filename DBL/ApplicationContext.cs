@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using ToDo.DBL.Entities;
 using ToDo.DBL.EntityConfiguration;
-using ToDo.Entities;
 
 namespace ToDo.DBL;
 
@@ -14,7 +14,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        new TodoItemEntityTypeConfiguration()
-            .Configure(modelBuilder.Entity<TodoItem>());
+        new TodoItemEntityTypeConfiguration().Configure(modelBuilder.Entity<TodoItem>());
     }
 }
