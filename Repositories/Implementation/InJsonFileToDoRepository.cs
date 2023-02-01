@@ -68,7 +68,7 @@ namespace ToDo.Repositories.Implementation
                     if (item.Id == id)
                     {
                         item.Created = toDoItem.Created;
-                        item.IsCompleted = toDoItem.IsCompleted;
+                        item.IsDone = toDoItem.IsDone;
                         item.Text = toDoItem.Text;
                         item.Updated = DateTime.Now;
                     }

@@ -79,7 +79,7 @@ public class InXmlFileToDoRepository : IToDoRepository
             fs.Close();
             XmlParser<List<TodoItem>>.Write(_filePath, new List<TodoItem>());
         }
-        
+
         return XmlParser<List<TodoItem>>.Read(_filePath);
         //   List<TodoItem> todoItemList = ReadListFromFile(FILE_PATH);     
         //   return todoItemList;
@@ -94,7 +94,7 @@ public class InXmlFileToDoRepository : IToDoRepository
             if (item.Id == id)
             {
                 item.Created = toDoItem.Created;
-                item.IsCompleted = toDoItem.IsCompleted;
+                item.IsDone = toDoItem.IsDone;
                 item.Text = toDoItem.Text;
                 item.Updated = DateTime.Now;
             }

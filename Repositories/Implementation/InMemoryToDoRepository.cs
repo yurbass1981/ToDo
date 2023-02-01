@@ -50,7 +50,7 @@ public class InMemoryToDoRepository : IToDoRepository
         if (itemToUpdate != null)
         {
             itemToUpdate.Text = toDoItem.Text;
-            itemToUpdate.IsCompleted = toDoItem.IsCompleted;
+            itemToUpdate.IsDone = toDoItem.IsDone;
         }
     }
 }

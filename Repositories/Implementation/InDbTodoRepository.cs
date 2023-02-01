@@ -47,7 +47,7 @@ namespace ToDo.Repositories.Implementation
         {
             var todoItemById = GetById(id);
             todoItemById.Text = toDoItem.Text;
-            todoItemById.IsCompleted = toDoItem.IsCompleted;
+            todoItemById.IsDone = toDoItem.IsDone;
             todoItemById.Updated = toDoItem.Updated;
 
             _dbContext.SaveChanges();
