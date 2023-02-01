@@ -19,7 +19,7 @@ if (storageType == DataStorageTypeEnum.InXmlFile.ToString())
 if (storageType == DataStorageTypeEnum.InJsonFile.ToString())
     builder.Services.AddScoped<IToDoRepository, InJsonFileToDoRepository>();
 if (storageType == DataStorageTypeEnum.InDB.ToString())
-    builder.Services.AddScoped<IToDoRepository, InJsonFileToDoRepository>();
+    builder.Services.AddScoped<IToDoRepository, InDbTodoRepository>();
 
 builder.Services.AddScoped<ITodoService, TodoService>();
 
