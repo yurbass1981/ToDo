@@ -31,7 +31,7 @@ namespace ToDo.DBL.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsCompleted")
+                    b.Property<bool>("IsDone")
                         .HasColumnType("bit");
 
                     b.Property<string>("Text")
