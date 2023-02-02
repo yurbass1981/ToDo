@@ -6,12 +6,12 @@ public static class XmlParser<T>
 {
     public static T Read(string filePath)
     {
-        T deserializedObject = default;
+        T deserializedObject;
 
         using (var streamReader = new StreamReader(filePath))
         {
             var serializer = new XmlSerializer(typeof(T));
-            deserializedObject = (T)serializer.Deserialize(streamReader);
+            deserializedObject = (T) serializer.Deserialize(streamReader);
         }
 
         return deserializedObject;
