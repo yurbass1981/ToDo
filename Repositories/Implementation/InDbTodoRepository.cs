@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ToDo.DBL;
 using ToDo.DBL.Entities;
 
@@ -33,7 +29,7 @@ namespace ToDo.Repositories.Implementation
         {
             var todoItemById = _dbContext.TodoItems.FirstOrDefault(x => x.Id == id);
             if (todoItemById == null)
-                throw new Exception($"todoItemById whith id {id} hasn't been found");
+                throw new Exception($"todoItemById with id {id} hasn't been found");
 
             return todoItemById;
         }

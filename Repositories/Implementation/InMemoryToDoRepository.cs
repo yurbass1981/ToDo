@@ -16,7 +16,7 @@ public class InMemoryToDoRepository : IToDoRepository
         TodoItem toDoItemToDelete = _todoStorage.FirstOrDefault(item => item.Id == id);
         if (toDoItemToDelete == null)
         {
-            throw new Exception($"toDoItemToDelete whith id {id} hasn't been found");
+            throw new Exception($"toDoItemToDelete with id {id} hasn't been found");
         }
 
         // TodoItem todoItemToDelete = null;

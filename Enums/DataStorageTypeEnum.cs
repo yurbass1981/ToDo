@@ -5,5 +5,5 @@ public enum DataStorageTypeEnum
     InMemory,
     InXmlFile,
     InJsonFile,
-    InDB
+    InDb
 }

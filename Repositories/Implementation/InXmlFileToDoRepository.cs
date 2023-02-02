@@ -31,7 +31,7 @@ public class InXmlFileToDoRepository : IToDoRepository
         var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
         if (todoItemToRemove == null)
         {
-            throw new Exception($"todoItemToRemove whith id {id} hasn't been found");
+            throw new Exception($"todoItemToRemove with id {id} hasn't been found");
         }
 
         todoItemList.Remove(todoItemToRemove);
