@@ -25,7 +25,7 @@ public class TodoController : Controller
    public IActionResult Delete(Guid id)
    {
       _todoService.Delete(id);
-      return RedirectToAction("List");
+      return RedirectToAction(nameof(List));
    }
 
    public IActionResult Create(TodoViewModel todoViewModel)
@@ -33,7 +33,7 @@ public class TodoController : Controller
       var todoItem = Mapper.MapModelToEntity(todoViewModel);
 
       _todoService.Create(todoItem);
-      return RedirectToAction("List");
+      return RedirectToAction(nameof(List));
    }
 
    public IActionResult UpdateView(Guid id)
@@ -49,6 +49,6 @@ public class TodoController : Controller
       var todoItem = Mapper.MapModelToEntity(todoViewModel);
       
       _todoService.Update(id, todoItem);
-      return RedirectToAction("List");
+      return RedirectToAction(nameof(List));
    }
 }
