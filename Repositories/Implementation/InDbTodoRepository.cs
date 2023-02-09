@@ -5,9 +5,9 @@ namespace ToDo.Repositories.Implementation
 {
     public class InDbTodoRepository : IToDoRepository
     {
-        private readonly ApplicationContext _dbContext;
+        private readonly AppDBContext _dbContext;
 
-        public InDbTodoRepository(ApplicationContext dbContext)
+        public InDbTodoRepository(AppDBContext dbContext)
         {
             _dbContext = dbContext;
         }

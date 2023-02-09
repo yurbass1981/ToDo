@@ -11,7 +11,7 @@ using ToDo.DBL;
 
 namespace ToDo.DBL.Migrations
 {
-    [DbContext(typeof(ApplicationContext))]
+    [DbContext(typeof(AppDBContext))]
     [Migration("20230201174235_RenamedColumnFromIsCompletedToIsDone")]
     partial class RenamedColumnFromIsCompletedToIsDone
     {

@@ -4,11 +4,11 @@ using ToDo.DBL.EntityConfiguration;
 
 namespace ToDo.DBL;
 
-public class ApplicationContext : DbContext
+public class AppDBContext : DbContext
 {
     public DbSet<TodoItem> TodoItems { get; set; }
 
-    public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+    public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
     {
     }
 

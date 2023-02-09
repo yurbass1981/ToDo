@@ -11,7 +11,7 @@ using ToDo.DBL;
 
 namespace ToDo.DBL.Migrations
 {
-    [DbContext(typeof(ApplicationContext))]
+    [DbContext(typeof(AppDBContext))]
     [Migration("20230126063613_InitialCreate")]
     partial class InitialCreate
     {
