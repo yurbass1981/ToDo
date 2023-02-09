@@ -6,9 +6,11 @@ namespace ToDo.Repositories.Implementation;
 public class InXmlFileToDoRepository : IToDoRepository
 {
     private readonly string _filePath;
+    private readonly ILogger<InXmlFileToDoRepository> _logger;
 
-    public InXmlFileToDoRepository(IConfiguration config)
+    public InXmlFileToDoRepository(ILogger<InXmlFileToDoRepository> logger, IConfiguration config)
     {
+        _logger = logger;
         _filePath = config.GetSection("StorageFilePath").Value;
         if (string.IsNullOrEmpty(_filePath))
         {
@@ -19,6 +21,7 @@ public class InXmlFileToDoRepository : IToDoRepository
 
     public void Create(TodoItem toDoItem)
     {
+        _logger.LogInformation($"Executing {nameof(Create)} method");
         List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
         todoItemList.Add(toDoItem);
         XmlParser<List<TodoItem>>.Write(_filePath, todoItemList);
@@ -26,6 +29,8 @@ public class InXmlFileToDoRepository : IToDoRepository
 
     public void Delete(Guid id)
     {
+        _logger.LogInformation($"Executing {nameof(Delete)} method. Trying to delete todoItem with id: {id}");
+
         List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
@@ -55,6 +60,7 @@ public class InXmlFileToDoRepository : IToDoRepository
     // public TodoItem GetById(Guid id) => ReadListFromFile(FILE_PATH).First(i => i.Id == id);
     public TodoItem GetById(Guid id)
     {
+        _logger.LogInformation($"Executing {nameof(GetById)} method. Trying to get todoItem with id: {id}");
         return XmlParser<List<TodoItem>>.Read(_filePath).First(i => i.Id == id);
 
         //   var todoList = ReadListFromFile(FILE_PATH);
@@ -73,6 +79,8 @@ public class InXmlFileToDoRepository : IToDoRepository
 
     public List<TodoItem> GetList()
     {
+        _logger.LogInformation($"Executing {nameof(GetList)} method");
+
         if (!File.Exists(_filePath))
         {
             var fs = File.Create(_filePath);
@@ -87,6 +95,8 @@ public class InXmlFileToDoRepository : IToDoRepository
 
     public void Update(Guid id, TodoItem toDoItem)
     {
+        _logger.LogInformation($"Executing {nameof(Update)} method. Trying to update todoItem with id: {id}");
+        
         List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         foreach (var item in todoItemList)

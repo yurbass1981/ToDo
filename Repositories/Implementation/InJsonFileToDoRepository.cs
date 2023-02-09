@@ -6,9 +6,11 @@ namespace ToDo.Repositories.Implementation
     public class InJsonFileToDoRepository : IToDoRepository
     {
         private readonly string _filePath;
+        private readonly ILogger<InJsonFileToDoRepository> _logger;
 
-        public InJsonFileToDoRepository(IConfiguration config)
+        public InJsonFileToDoRepository(ILogger<InJsonFileToDoRepository> logger, IConfiguration config)
         {
+            _logger = logger;
             _filePath = config.GetSection("StorageFilePath").Value;
             if (string.IsNullOrEmpty(_filePath))
             {
@@ -19,6 +21,7 @@ namespace ToDo.Repositories.Implementation
 
         public void Create(TodoItem toDoItem)
         {
+            _logger.LogInformation($"Executing {nameof(Create)} method");
             List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath);
             todoItemList.Add(toDoItem);
             JsonParser<List<TodoItem>>.Write(_filePath, todoItemList);
@@ -27,6 +30,7 @@ namespace ToDo.Repositories.Implementation
 
         public void Delete(Guid id)
         {
+            _logger.LogInformation($"Executing {nameof(Delete)} method. Trying to delete todoItem with id: {id}");
             List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath);
 
             var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
@@ -43,12 +47,15 @@ namespace ToDo.Repositories.Implementation
 
         public TodoItem GetById(Guid id)
         {
+            _logger.LogInformation($"Executing {nameof(GetById)} method. Trying to get todoItem with id: {id}");
             return JsonParser<List<TodoItem>>.Read(_filePath).First(i => i.Id == id);
         }
 
 
         public List<TodoItem> GetList()
         {
+            _logger.LogInformation($"Executing {nameof(GetList)} method");
+
             if (!File.Exists(_filePath))
             {
                 var fs = File.Create(_filePath);
@@ -62,6 +69,8 @@ namespace ToDo.Repositories.Implementation
 
         public void Update(Guid id, TodoItem toDoItem)
         {
+            _logger.LogInformation($"Executing {nameof(Update)} method. Trying to update todoItem with id: {id}");
+            
             List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath)
                 .Select(item =>
                 {
