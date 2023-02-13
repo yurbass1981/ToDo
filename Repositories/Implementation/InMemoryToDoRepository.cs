@@ -7,6 +7,11 @@ public class InMemoryToDoRepository : IToDoRepository
     private readonly List<TodoItem> _todoStorage = new();
     private readonly ILogger<InMemoryToDoRepository> _logger;
 
+    public InMemoryToDoRepository(ILogger<InMemoryToDoRepository> logger)
+    {
+        _logger = logger;
+    }
+
     public void Create(TodoItem toDoItem)
     {
         _logger.LogInformation($"Executing {nameof(Create)} method");
