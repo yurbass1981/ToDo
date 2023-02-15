@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using ToDo.DBL.Entities;
-using ToDo.DBL.EntityConfiguration;
+using ToDo.DAL.Entities;
+using ToDo.DAL.EntityConfiguration;
 
-namespace ToDo.DBL;
+namespace ToDo.DAL;
 
 public class AppDBContext : DbContext
 {

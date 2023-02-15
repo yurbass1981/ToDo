@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ToDo.DBL;
+using ToDo.DAL;
 
 #nullable disable
 
-namespace ToDo.DBL.Migrations
+namespace ToDo.DAL.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20230126063613_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230201174235_RenamedColumnFromIsCompletedToIsDone")]
+    partial class RenamedColumnFromIsCompletedToIsDone
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace ToDo.DBL.Migrations
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsCompleted")
+                    b.Property<bool>("IsDone")
                         .HasColumnType("bit");
 
                     b.Property<string>("Text")

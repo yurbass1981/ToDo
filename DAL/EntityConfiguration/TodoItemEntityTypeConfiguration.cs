@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ToDo.DBL.Entities;
+using ToDo.DAL.Entities;
 
-namespace ToDo.DBL.EntityConfiguration;
+namespace ToDo.DAL.EntityConfiguration;
 
 public class TodoItemEntityTypeConfiguration : IEntityTypeConfiguration<TodoItem>
 {

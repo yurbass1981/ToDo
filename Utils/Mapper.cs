@@ -1,4 +1,4 @@
-using ToDo.DBL.Entities;
+using ToDo.DAL.Entities;
 using ToDo.Models;
 
 namespace ToDo.Utils;

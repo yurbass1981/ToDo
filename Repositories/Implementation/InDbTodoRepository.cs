@@ -1,5 +1,5 @@
-using ToDo.DBL;
-using ToDo.DBL.Entities;
+using ToDo.DAL;
+using ToDo.DAL.Entities;
 
 namespace ToDo.Repositories.Implementation
 {
