@@ -3,12 +3,12 @@ using ToDo.Utils;
 
 namespace ToDo.Repositories.Implementation
 {
-    public class InJsonFileToDoRepository : IToDoRepository
+    public class InJsonFileTodoRepository : ITodoRepository
     {
         private readonly string _filePath;
-        private readonly ILogger<InJsonFileToDoRepository> _logger;
+        private readonly ILogger<InJsonFileTodoRepository> _logger;
 
-        public InJsonFileToDoRepository(ILogger<InJsonFileToDoRepository> logger, IConfiguration config)
+        public InJsonFileTodoRepository(ILogger<InJsonFileTodoRepository> logger, IConfiguration config)
         {
             _logger = logger;
             _filePath = config.GetSection("StorageFilePath").Value;
@@ -70,7 +70,7 @@ namespace ToDo.Repositories.Implementation
         public void Update(Guid id, TodoItem toDoItem)
         {
             _logger.LogInformation($"Executing {nameof(Update)} method. Trying to update todoItem with id: {id}");
-            
+
             List<TodoItem> todoItemList = JsonParser<List<TodoItem>>.Read(_filePath)
                 .Select(item =>
                 {

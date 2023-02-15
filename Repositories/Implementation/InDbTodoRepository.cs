@@ -3,7 +3,7 @@ using ToDo.DBL.Entities;
 
 namespace ToDo.Repositories.Implementation
 {
-    public class InDbTodoRepository : IToDoRepository
+    public class InDbTodoRepository : ITodoRepository
     {
         private readonly AppDBContext _dbContext;
         private readonly ILogger<InDbTodoRepository> _logger;

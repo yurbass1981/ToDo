@@ -2,7 +2,7 @@
 
 namespace ToDo.Repositories;
 
-public interface IToDoRepository
+public interface ITodoRepository
 {
     List<TodoItem> GetList();
     void Create(TodoItem toDoItem);

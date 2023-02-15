@@ -3,12 +3,12 @@ using ToDo.Utils;
 
 namespace ToDo.Repositories.Implementation;
 
-public class InXmlFileToDoRepository : IToDoRepository
+public class InXmlFileTodoRepository : ITodoRepository
 {
     private readonly string _filePath;
-    private readonly ILogger<InXmlFileToDoRepository> _logger;
+    private readonly ILogger<InXmlFileTodoRepository> _logger;
 
-    public InXmlFileToDoRepository(ILogger<InXmlFileToDoRepository> logger, IConfiguration config)
+    public InXmlFileTodoRepository(ILogger<InXmlFileTodoRepository> logger, IConfiguration config)
     {
         _logger = logger;
         _filePath = config.GetSection("StorageFilePath").Value;
@@ -62,7 +62,7 @@ public class InXmlFileToDoRepository : IToDoRepository
         }
 
         return XmlParser<List<TodoItem>>.Read(_filePath);
-        
+
     }
 
     public void Update(Guid id, TodoItem toDoItem)

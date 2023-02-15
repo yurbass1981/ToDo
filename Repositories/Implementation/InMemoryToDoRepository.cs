@@ -2,12 +2,12 @@
 
 namespace ToDo.Repositories.Implementation;
 
-public class InMemoryToDoRepository : IToDoRepository
+public class InMemoryTodoRepository : ITodoRepository
 {
     private readonly List<TodoItem> _todoStorage = new();
-    private readonly ILogger<InMemoryToDoRepository> _logger;
+    private readonly ILogger<InMemoryTodoRepository> _logger;
 
-    public InMemoryToDoRepository(ILogger<InMemoryToDoRepository> logger)
+    public InMemoryTodoRepository(ILogger<InMemoryTodoRepository> logger)
     {
         _logger = logger;
     }
@@ -46,7 +46,7 @@ public class InMemoryToDoRepository : IToDoRepository
     public void Update(Guid id, TodoItem toDoItem)
     {
         _logger.LogInformation($"Executing {nameof(Update)} method. Trying to update todoItem with id: {id}");
-        
+
         var itemToUpdate = GetById(id);
 
         if (itemToUpdate != null)

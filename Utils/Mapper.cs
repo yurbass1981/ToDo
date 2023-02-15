@@ -15,13 +15,13 @@ public static class Mapper
         };
     }
 
-    public static TodoItem MapModelToEntity(TodoViewModel toDoViewModel)
+    public static TodoItem MapModelToEntity(TodoViewModel todoViewModel)
     {
         return new TodoItem()
         {
-            Id = toDoViewModel.Id,
-            Text = toDoViewModel.Text,
-            IsDone = toDoViewModel.IsDone
+            Id = todoViewModel.Id,
+            Text = todoViewModel.Text,
+            IsDone = todoViewModel.IsDone
         };
     }
 }
