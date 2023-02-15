@@ -1,4 +1,4 @@
-﻿using ToDo.DBL.Entities;
+﻿using ToDo.DAL.Entities;
 
 namespace ToDo.Repositories;
 

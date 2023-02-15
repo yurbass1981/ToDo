@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ToDo.DBL.Migrations
+namespace ToDo.DAL.Migrations
 {
     /// <inheritdoc />
     public partial class RenamedColumnFromIsCompletedToIsDone : Migration
