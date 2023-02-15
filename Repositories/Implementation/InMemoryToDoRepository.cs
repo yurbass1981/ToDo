@@ -28,16 +28,6 @@ public class InMemoryToDoRepository : IToDoRepository
             throw new Exception($"toDoItemToDelete with id {id} hasn't been found");
         }
 
-        // TodoItem todoItemToDelete = null;
-        // foreach (var item in _todoStorage)
-        // {
-        //     if (item.Id == id)
-        //     {
-        //         toDoItemToDelete = item;
-        //         break;
-        //     }
-        // }
-
         _todoStorage.Remove(toDoItemToDelete);
     }
 

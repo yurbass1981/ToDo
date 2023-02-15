@@ -12,6 +12,7 @@ public class InXmlFileToDoRepository : IToDoRepository
     {
         _logger = logger;
         _filePath = config.GetSection("StorageFilePath").Value;
+
         if (string.IsNullOrEmpty(_filePath))
         {
             throw new Exception("FilePath hasn't been found");
@@ -30,7 +31,6 @@ public class InXmlFileToDoRepository : IToDoRepository
     public void Delete(Guid id)
     {
         _logger.LogInformation($"Executing {nameof(Delete)} method. Trying to delete todoItem with id: {id}");
-
         List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         var todoItemToRemove = todoItemList.FirstOrDefault(item => item.Id == id);
@@ -41,40 +41,13 @@ public class InXmlFileToDoRepository : IToDoRepository
 
         todoItemList.Remove(todoItemToRemove);
 
-
-        // todoItemList.RemoveAll(item => item.Id == id);  
-
-        //   foreach (var item in todoItemList)
-        //   {
-        //      if (item.Id == id)
-        //      {
-        //         todoItemList.Remove(item);
-        //         break;
-        //      }
-        //   }
-
         XmlParser<List<TodoItem>>.Write(_filePath, todoItemList);
     }
 
-
-    // public TodoItem GetById(Guid id) => ReadListFromFile(FILE_PATH).First(i => i.Id == id);
     public TodoItem GetById(Guid id)
     {
         _logger.LogInformation($"Executing {nameof(GetById)} method. Trying to get todoItem with id: {id}");
         return XmlParser<List<TodoItem>>.Read(_filePath).First(i => i.Id == id);
-
-        //   var todoList = ReadListFromFile(FILE_PATH);
-        //   return todoList.First(item => item.Id == id);
-
-        //   foreach (var item in todoList)
-        //   {
-        //      if (item.Id == id)
-        //      {
-        //         return item;
-        //      }
-        //   }
-
-        //   throw new Exception($"TodoItem with id {id} hasn't been found");
     }
 
     public List<TodoItem> GetList()
@@ -89,14 +62,12 @@ public class InXmlFileToDoRepository : IToDoRepository
         }
 
         return XmlParser<List<TodoItem>>.Read(_filePath);
-        //   List<TodoItem> todoItemList = ReadListFromFile(FILE_PATH);     
-        //   return todoItemList;
+        
     }
 
     public void Update(Guid id, TodoItem toDoItem)
     {
         _logger.LogInformation($"Executing {nameof(Update)} method. Trying to update todoItem with id: {id}");
-        
         List<TodoItem> todoItemList = XmlParser<List<TodoItem>>.Read(_filePath);
 
         foreach (var item in todoItemList)

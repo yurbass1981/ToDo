@@ -23,8 +23,8 @@ namespace ToDo.Repositories.Implementation
 
         public void Delete(Guid id)
         {
-            var todoItemToDelete = GetById(id);
             _logger.LogInformation($"Executing {nameof(Delete)} method. Trying to delete todoItem with id: {id}");
+            var todoItemToDelete = GetById(id);
             _dbContext.TodoItems.Remove(todoItemToDelete);
             _dbContext.SaveChanges();
         }
